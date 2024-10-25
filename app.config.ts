@@ -10,7 +10,7 @@ export default defineAppConfig({
     container:
     {
       base: 'mx-auto',
-      padding: 'px-2 sm:px-6 lg:px-8',
+      padding: 'px-2 sm:px-4 lg:px-6',
       constrained: 'max-w-7xl',
     },
     tabs:
