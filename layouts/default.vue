@@ -1,11 +1,12 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup></script>
 
 <template>
   <div>
-    <NavBar />
-    <div class="py-16">
+    <Navbar />
+    <div class="py-4 md:py-8">
       <slot />
     </div>
+    <Footer />
   </div>
 </template>
 

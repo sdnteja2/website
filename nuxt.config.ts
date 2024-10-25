@@ -2,13 +2,37 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/ui', '@nuxt/fonts', '@nuxt/eslint', '@nuxt/image'],
+  modules: ['@nuxt/ui', '@nuxt/fonts', '@nuxt/eslint', '@nuxt/image', '@nuxt/content', '@nuxtjs/seo'],
   ui: {
 
     global: true,
   },
   colorMode: {
     preference: 'dark',
+  },
+  content: {
+    documentDriven: true,
+
+    navigation: {
+      fields: ['navTitle'],
+    },
+    markdown: {
+      anchorLinks: false,
+    },
+    highlight: {
+      theme: {
+        default: 'github-light',
+        dark: 'github-dark',
+      },
+      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini', 'c', 'cpp'],
+    },
+  },
+  site: {
+    url: 'https://sdnteja2.sch.id/',
+    name: 'SDN TEJA 2',
+    description: 'Website resmi SDN Teja 2, Kecamatan Rajagaluh, Kabupaten Majalengka, Jawa Barat',
+    defaultLocale: 'id', // not needed if you have @nuxtjs/i18n installed
+    themeColor: '#F22727',
   },
   fonts: {
     families: [
