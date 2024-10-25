@@ -1,4 +1,6 @@
 <script setup>
+import { onMounted, ref } from 'vue'
+
 defineProps({
   nama: {
     type: String,
@@ -17,6 +19,29 @@ defineProps({
     default: '/img/guru/yusup.webp',
   },
 })
+
+const items = [
+  'https://a.storyblok.com/f/255043/1416x1062/14a8939cf4/whatsapp-image-2024-02-27-at-16-14-10.jpeg',
+  'https://a.storyblok.com/f/255043/1416x1062/f4cfe8d8f4/whatsapp-image-2024-02-27-at-16-14-10-1.jpeg',
+  'https://a.storyblok.com/f/255043/1280x959/e6eab3e2d6/whatsapp-image-2024-02-27-at-16-14-08.jpeg',
+  'https://a.storyblok.com/f/255043/1280x959/a99d791feb/whatsapp-image-2024-02-27-at-16-14-07-1.jpeg',
+  'https://a.storyblok.com/f/255043/1280x959/350c22b6c0/whatsapp-image-2024-02-27-at-16-14-03-1.jpeg',
+
+]
+
+const carouselRef = ref()
+
+onMounted(() => {
+  setInterval(() => {
+    if (!carouselRef.value)
+      return
+
+    if (carouselRef.value.page === carouselRef.value.pages)
+      return carouselRef.value.select(0)
+
+    carouselRef.value.next()
+  }, 3000)
+})
 </script>
 
 <template>
@@ -24,65 +49,42 @@ defineProps({
     <!-- Testimonials -->
     <UContainer class=" px-4 py-10 sm:px-16  lg:py-14 mx-auto">
       <!-- Grid -->
-      <div class="md:grid md:grid-cols-2  md:justify-center md:items-center">
-        <div class="hidden  md:flex md:justify-center  mb-24 md:mb-0 sm:px-6">
-          <div class="relative justify-center">
-            <NuxtImg
-              data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="rounded-md object-cover h-[450px]" :src="foto"
-              width="380"
-              height="450"
-              loading="lazy"
-              :title="nama"
-              :alt="nama"
-              :placeholder="[50, 25, 75, 5]"
-            />
-          </div>
-        </div>
-        <!-- End Col -->
-
-        <div>
-          <!-- Blockquote -->
-          <blockquote class="relative">
-            <div class="relative z-10">
-              <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-xs font-semibold text-gray-500 tracking-wide uppercase mb-3 dark:text-gray-200">
-                SELAYANG PANDANG
-              </p>
-
-              <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class=" font-medium italic text-gray-800 md:text-2xl  dark:text-gray-400">
-                {{ ucapan }}
-              </p>
+      <div class="md:grid h-full gap-6 md:grid-cols-2  md:justify-center md:items-center">
+        <UCard>
+          <div class="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-50 dark:text-gray-800">
+            <img src="https://source.unsplash.com/random/100x100?4" alt="" class="w-20 h-20 rounded-full dark:bg-gray-500">
+            <blockquote class="max-w-lg text-lg italic font-medium text-center">
+              "Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae? Rem unde atque mollitia!"
+            </blockquote>
+            <div class="text-center dark:text-gray-600">
+              <p>Leroy Jenkins</p>
+              <p>CEO of Company Co.</p>
             </div>
-
-            <footer class="mt-6">
-              <div class="flex items-center">
-                <div class="md:hidden flex-shrink-0">
-                  <NuxtImg
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="top-bottom"
-                    class="h-12 w-12 rounded-full bg-cover object-cover"
-                    width="200"
-                    height="200"
-                    loading="lazy"
-                    :src="foto"
-                    :title="nama"
-                    :alt="nama"
-                    :placeholder="[50, 25, 75, 5]"
-                  />
-                </div>
-                <div class="ms-4 md:ms-0">
-                  <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-base font-semibold text-gray-800 dark:text-gray-200">
-                    {{ nama }}
-                  </div>
-                  <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-xs text-gray-500 dark:text-gray-400">
-                    {{ jabatan }}
-                  </div>
-                </div>
-              </div>
-            </footer>
-          </blockquote>
-          <!-- End Blockquote -->
-        </div>
-        <!-- End Col -->
+          </div>
+        </UCard>
+        <UCard>
+          <div class="w-full ">
+            <UCarousel
+              ref="carouselRef"
+              v-slot="{ item }"
+              :items="items"
+              :ui="{ item: 'basis-full' }"
+              class="rounded-lg  overflow-hidden"
+            >
+              <USkeleton class="aspect-w-16 aspect-h-9" :ui="{ rounded: 'rounded-md' }" />
+              <NuxtImg
+                data-aos="fade-up" data-aos-anchor-placement="top-bottom" :src="item" class="w-full h-52 md:h-64 object-cover rounded-md "
+                draggable="false"
+                height="480"
+                width="720"
+                loading="lazy"
+                title="fasilitas"
+                alt="fasilitas"
+                :placeholder="[50, 25, 75, 5]"
+              />
+            </UCarousel>
+          </div>
+        </UCard>
       </div>
       <!-- End Grid -->
     </UContainer>
