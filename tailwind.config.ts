@@ -1,11 +1,9 @@
 /* eslint-disable unused-imports/no-unused-vars */
 
 import type { Config } from 'tailwindcss'
-
 import plugin from 'tailwindcss/plugin'
 
 export default <Partial<Config>> {
-
   theme: {
     extend: {
       colors: {
@@ -38,24 +36,23 @@ export default <Partial<Config>> {
           950: '#1B0202',
         },
         gelap: {
-          DEFAULT: '#110E26',
-          50: '#B4AEE1',
-          100: '#A69FDC',
-          200: '#8B81D1',
-          300: '#6F63C6',
-          400: '#5445BB',
-          500: '#463A9D',
-          600: '#392F7F',
-          700: '#2C2462',
-          800: '#1E1944',
-          900: '#110E26',
-          950: '#080612',
+          DEFAULT: '#0e1426',
+          50: '#b4bfdc',
+          100: '#a6b0d8',
+          200: '#8b95cc',
+          300: '#6f7ac0',
+          400: '#545fb4',
+          500: '#3a479a',
+          600: '#2f3b7e',
+          700: '#232e61',
+          800: '#182244',
+          900: '#0e1426',
+          950: '#080b12',
         },
-
       },
       fontFamily: {
-        title: ['Poppins'],
-        body: ['Lato'],
+        title: ['Montserrat'], // Mengganti Poppins dengan Montserrat untuk heading
+        body: ['Source Sans Pro'], // Mengganti Lato dengan Source Sans Pro untuk body text
       },
       typography: ({ theme }: { theme: any }) => ({
         merah: {

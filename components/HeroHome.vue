@@ -3,46 +3,41 @@
 <template>
   <div>
     <!-- Hero -->
-    <div class="relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/squared-bg-element.svg')] dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
-      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
-        <!-- Announcement Banner -->
-        <div class="flex justify-center">
-          <a class="inline-flex items-center gap-x-2 bg-white border border-gray-200 text-xs text-gray-600 p-2 px-3 rounded-full transition hover:border-gray-300 focus:outline-none focus:border-gray-300 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:focus:border-neutral-600" href="#">
-            Explore the Capital Product
-            <span class="flex items-center gap-x-1">
-              <span class="border-s border-gray-200 text-blue-600 ps-2 dark:text-blue-500 dark:border-neutral-700">Explore</span>
-              <svg class="shrink-0 size-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-            </span>
-          </a>
-        </div>
-        <!-- End Announcement Banner -->
-
-        <!-- Title -->
-        <div class="mt-5 max-w-xl text-center mx-auto">
-          <h1 class="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200">
-            Sekolah Dasar Negeri Teja II
+    <!-- Hero -->
+    <div class="relative overflow-hidden">
+      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="max-w-2xl text-center mx-auto">
+          <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl dark:text-white">
+            Designed for you to get more <span class="text-blue-600">simple</span>
           </h1>
-        </div>
-        <!-- End Title -->
-
-        <div class="mt-5 max-w-3xl text-center mx-auto">
-          <p class="text-lg text-gray-600 dark:text-neutral-400">
-            Preline is a large open-source project, crafted with Tailwind CSS framework by Hmlstream.
+          <p class="mt-3 text-lg text-gray-800 dark:text-neutral-400">
+            Build your business here. Take it anywhere.
           </p>
         </div>
 
-        <!-- Buttons -->
-        <div class="mt-8 gap-3 flex justify-center">
-          <a class="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 focus:outline-none focus:from-violet-600 focus:to-blue-600 border border-transparent text-white text-sm font-medium rounded-full py-3 px-4" href="#">
-            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-            </svg>
-            Continue with Github
-          </a>
+        <div class="mt-10 relative max-w-5xl mx-auto">
+          <div class="w-full object-cover h-96 sm:h-[480px] bg-[url('https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80')] bg-no-repeat bg-center bg-cover rounded-xl" />
+
+          <div class="absolute inset-0 size-full">
+            <div class="flex flex-col justify-center items-center size-full">
+              <a class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="#">
+                <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                Play the overview
+              </a>
+            </div>
+          </div>
+
+          <div class="absolute bottom-12 -start-20 -z-[1] size-48 bg-gradient-to-b from-orange-500 to-white p-px rounded-lg dark:to-neutral-900">
+            <div class="bg-white size-48 rounded-lg dark:bg-neutral-900" />
+          </div>
+
+          <div class="absolute -top-12 -end-20 -z-[1] size-48 bg-gradient-to-t from-blue-600 to-cyan-400 p-px rounded-full">
+            <div class="bg-white size-48 rounded-full dark:bg-neutral-900" />
+          </div>
         </div>
-        <!-- End Buttons -->
       </div>
     </div>
+    <!-- End Hero -->
     <!-- End Hero -->
   </div>
 </template>
