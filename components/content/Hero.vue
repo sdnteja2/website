@@ -29,7 +29,7 @@ const remainingText = props.title.substring(3) // Sisa teks
           <!-- Title and Description -->
           <div class="max-w-3xl text-center lg:text-left mx-auto lg:mx-0 space-y-6">
             <h1 class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
-              <span class="text-gelap-900">{{ firstThreeChars }}</span>{{ remainingText }}
+              <span class="text-gelap-900 dark:text-kuning-500">{{ firstThreeChars }}</span>{{ remainingText }}
             </h1>
             <p class="text-lg ">
               {{ props.description }}

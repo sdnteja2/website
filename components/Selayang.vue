@@ -25,19 +25,6 @@ defineProps({
     <UContainer class=" px-4 py-10 sm:px-16  lg:py-14 mx-auto">
       <!-- Grid -->
       <div class="md:grid md:grid-cols-2  md:justify-center md:items-center">
-        <div class="hidden  md:flex md:justify-center  mb-24 md:mb-0 sm:px-6">
-          <div class="relative justify-center">
-            <NuxtImg
-              data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="rounded-md object-cover h-[450px]" :src="foto"
-              width="380"
-              height="450"
-              loading="lazy"
-              :title="nama"
-              :alt="nama"
-              :placeholder="[50, 25, 75, 5]"
-            />
-          </div>
-        </div>
         <!-- End Col -->
 
         <div>
@@ -55,7 +42,7 @@ defineProps({
 
             <footer class="mt-6">
               <div class="flex items-center">
-                <div class="md:hidden flex-shrink-0">
+                <div class="">
                   <NuxtImg
                     data-aos="fade-up"
                     data-aos-anchor-placement="top-bottom"

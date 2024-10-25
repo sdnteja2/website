@@ -40,7 +40,7 @@ export default defineAppConfig({
           inactive: 'text-white dark:text-white', // Warna teks inaktif gray
           height: 'h-8',
           padding: 'px-3',
-          size: 'text-sm',
+          size: 'text-base',
           font: 'font-medium',
           rounded: 'rounded-md',
           shadow: '',
