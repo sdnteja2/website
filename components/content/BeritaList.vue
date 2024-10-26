@@ -29,12 +29,12 @@ const beritas = computed(() => (_berita.value || []).slice(0, 10)) // Tampilkan 
       <!-- End List -->
       <!-- Title -->
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="headline">
+        <h1 class="headline block text-4xl sm:text-5xl  font-black leading-tight">
           Berita  SDN Teja II
         </h1>
-        <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="mt-1 subheadline">
+        <h2 class="-mt-4 subheadline">
           Berita yang di publikasikan oleh SDN Teja II
-        </p>
+        </h2>
       </div>
       <ul class="space-y-10">
         <div class="featured">
@@ -47,11 +47,30 @@ const beritas = computed(() => (_berita.value || []).slice(0, 10)) // Tampilkan 
     </div>
   </UContainer>
   <div v-else class="tour">
-    <p>Seems like there are no beritas yet.</p>
-    <p>
-      You can start by
-      <!-- eslint-disable-next-line -->
-      <ProseA href="https://alpine.nuxt.space/beritas/write-beritas">creating</ProseA> one in the <ProseCodeInline>beritas</ProseCodeInline> folder.
-    </p>
+    <div class="flex flex-col space-y-4">
+      <!-- Tanggal Placeholder -->
+      <div class="flex justify-end">
+        <USkeleton class="h-4 w-20" />
+      </div>
+
+      <!-- Judul Placeholder -->
+      <USkeleton class="h-6 w-full" />
+
+      <!-- Deskripsi Placeholder -->
+      <div class="space-y-2">
+        <USkeleton class="h-4 w-[90%]" />
+        <USkeleton class="h-4 w-[85%]" />
+      </div>
+
+      <!-- Tags Placeholder -->
+      <div class="flex flex-wrap mt-4 space-x-2">
+        <USkeleton v-for="n in 3" :key="n" class="h-6 w-14 rounded-md" />
+      </div>
+
+      <!-- Link Baca Selengkapnya Placeholder -->
+      <div class="flex justify-end">
+        <USkeleton class="h-4 w-24" />
+      </div>
+    </div>
   </div>
 </template>

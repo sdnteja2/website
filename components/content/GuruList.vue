@@ -23,7 +23,7 @@ const guru = computed(() => _guru.value || [])
   <UContainer class="py-4 md:py-8 md:px-10 mx-auto">
     <div v-if="guru?.length">
       <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 class="headline block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+        <h1 class="headline block text-4xl sm:text-5xl  font-black leading-tight">
           Guru & Staff
         </h1>
         <h2 class="-mt-4 subheadline">
@@ -117,7 +117,45 @@ const guru = computed(() => _guru.value || [])
     </div>
 
     <div v-else class="tour">
-      <p>Sabarr sedang loading</p>
+      <UContainer class="py-4 md:py-8 md:px-10 mx-auto">
+        <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+          <!-- Judul Halaman Placeholder -->
+          <USkeleton class="h-10 w-1/2 mx-auto mb-2" />
+          <USkeleton class="h-6 w-1/3 mx-auto" />
+        </div>
+
+        <!-- Skeleton Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card Skeleton untuk Guru -->
+          <UCard v-for="n in 6" :key="n" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="flex flex-col justify-center md:flex-row items-center gap-y-4 gap-x-4">
+              <!-- Placeholder untuk Foto Profil -->
+              <div class="md:h-36 h-52 w-52 md:w-36">
+                <USkeleton class="w-full h-full rounded-md" />
+              </div>
+
+              <!-- Placeholder untuk Nama, Jabatan, dan Ikon Media Sosial -->
+              <div class="grow space-y-2">
+                <!-- Nama -->
+                <USkeleton class="h-6 w-3/4" />
+                <!-- Jabatan -->
+                <USkeleton class="h-4 w-1/2 mx-auto" />
+
+                <!-- Tombol Media Sosial -->
+                <div class="w-full flex justify-center items-center space-x-2">
+                  <USkeleton v-for="i in 3" :key="i" class="h-6 w-6 rounded-full" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Placeholder untuk Deskripsi -->
+            <div class="md:pt-4">
+              <USkeleton class="h-4 w-full mb-1" />
+              <USkeleton class="h-4 w-5/6" />
+            </div>
+          </UCard>
+        </div>
+      </UContainer>
     </div>
   </UContainer>
 </template>
