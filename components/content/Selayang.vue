@@ -53,7 +53,7 @@ onMounted(() => {
       <!-- Grid -->
       <div class="grid grid-cols-1 h-full  gap-6 md:grid-cols-2 md:justify-center md:items-center">
         <!-- Card untuk Foto dan Deskripsi -->
-        <UCard class="h-full">
+        <UCard data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="h-full">
           <template #header>
             <h2 class="subheadline ">
               Selayang Pandang
@@ -80,7 +80,7 @@ onMounted(() => {
         </UCard>
 
         <!-- Card untuk Carousel -->
-        <UCard class="h-full">
+        <UCard data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="h-full">
           <template #header>
             <h2 class="subheadline ">
               Fasilitas

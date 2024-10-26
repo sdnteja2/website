@@ -50,7 +50,7 @@ const id = computed(() => {
           },
         }
       "
-      class="h-full"
+      class="h-full hover:ring-2 hover:ring-merah dark:hover:ring-merah-400"
     >
       <NuxtLink
         :to="article._path"

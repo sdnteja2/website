@@ -44,7 +44,7 @@ const rows = computed(() => {
 
 <template>
   <UContainer class="py-16 grid grid-cols-1 md:grid-cols-2 gap-6">
-    <UCard>
+    <UCard data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="pb-8">
         <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="subheadline">
           PRESTASI SDN TEJA II
@@ -66,7 +66,7 @@ const rows = computed(() => {
     </UCard>
 
     <!-- Identitas Sekolah -->
-    <UCard>
+    <UCard data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="max-w-2xl mx-auto">
         <div class="pb-8">
           <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="subheadline">

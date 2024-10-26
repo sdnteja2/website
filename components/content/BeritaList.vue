@@ -29,10 +29,10 @@ const beritas = computed(() => (_berita.value || []).slice(0, 10)) // Tampilkan 
       <!-- End List -->
       <!-- Title -->
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 class="headline block text-4xl sm:text-5xl  font-black leading-tight">
+        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="headline block text-4xl sm:text-5xl  font-black leading-tight">
           Berita  SDN Teja II
         </h1>
-        <h2 class="-mt-4 subheadline">
+        <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="-mt-4 subheadline">
           Berita yang di publikasikan oleh SDN Teja II
         </h2>
       </div>
@@ -47,7 +47,7 @@ const beritas = computed(() => (_berita.value || []).slice(0, 10)) // Tampilkan 
     </div>
   </UContainer>
   <UContainer v-else class="tour">
-    <div class="flex flex-col space-y-4">
+    <div class="flex flex-col max-w-3xl space-y-4">
       <!-- Tanggal Placeholder -->
       <div class="flex justify-end">
         <USkeleton class="h-4 w-20" />

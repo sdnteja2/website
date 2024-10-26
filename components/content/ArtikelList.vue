@@ -22,10 +22,10 @@ const articles = computed(() => _articles.value || [])
     <div class="max-w-[85rem]">
       <!-- Title -->
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 class="headline block text-4xl sm:text-5xl  font-black leading-tight">
+        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="headline block text-4xl sm:text-5xl  font-black leading-tight">
           Artikel SDN Teja II
         </h1>
-        <h2 class="-mt-4 subheadline">
+        <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="-mt-4 subheadline">
           Artikel yang dipublikasikan oleh SDN Teja II
         </h2>
       </div>
@@ -35,7 +35,7 @@ const articles = computed(() => _articles.value || [])
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Menampilkan Skeleton jika articles tidak ada -->
         <template v-if="!articles.length">
-          <UCard v-for="n in 3" :key="n" class="h-full">
+          <UCard v-for="n in 3" :key="n" data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="h-full">
             <!-- Placeholder untuk Gambar -->
             <div class="aspect-w-16 aspect-h-9">
               <USkeleton class="w-full h-full rounded-lg" />
