@@ -76,9 +76,9 @@ export default defineNuxtConfig({
   },
   studio: {
     gitInfo: {
-      name: 'SDN Teja II',
-      owner: 'SDN Teja 2',
-      url: 'https://github.com/sdnteja2/website/',
+      name: 'sdnteja2',
+      owner: 'sdnteja2',
+      url: 'https://github.com/sdnteja2/website',
     },
   },
   // routeRules: {
