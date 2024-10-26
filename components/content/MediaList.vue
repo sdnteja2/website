@@ -22,12 +22,12 @@ const listkelas = medias.value.map(media => media.kelas)
     <div class="  mx-auto ">
       <!-- Title -->
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="title">
+        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="headline block text-4xl sm:text-5xl  font-black leading-tight">
           media
         </h1>
-        <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="mt-1 text-gray-600 dark:text-gray-400">
+        <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="-mt-4 subheadline">
           Kumpulan Sumber media
-        </p>
+        </h2>
       </div>
       <!-- End Title -->
       <div class="py-6 w-full">
