@@ -76,7 +76,7 @@ export default defineNuxtConfig({
   },
   studio: {
     gitInfo: {
-      name: 'sdnteja2',
+      name: 'website',
       owner: 'sdnteja2',
       url: 'https://github.com/sdnteja2/website',
     },
