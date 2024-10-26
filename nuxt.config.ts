@@ -3,7 +3,16 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/ui', '@nuxt/fonts', '@nuxt/eslint', '@nuxt/image', '@nuxt/content', '@nuxtjs/seo', '@nuxtjs/cloudinary'],
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/fonts',
+    '@nuxt/eslint',
+    '@nuxt/image',
+    '@nuxt/content',
+    '@nuxtjs/seo',
+    '@nuxtjs/cloudinary',
+    '@nuxthq/studio',
+  ],
   ui: {
     global: true,
   },
@@ -63,6 +72,13 @@ export default defineNuxtConfig({
   vue: {
     compilerOptions: {
       isCustomElement: tag => ['lite-youtube'].includes(tag),
+    },
+  },
+  studio: {
+    gitInfo: {
+      name: 'SDN Teja II',
+      owner: 'SDN Teja 2',
+      url: 'https://github.com/sdnteja2/website/',
     },
   },
   // routeRules: {
