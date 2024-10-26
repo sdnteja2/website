@@ -52,7 +52,7 @@ export default <Partial<Config>> {
       },
       fontFamily: {
         title: ['Montserrat'], // Mengganti Poppins dengan Montserrat untuk heading
-        body: ['Source Sans Pro'], // Mengganti Lato dengan Source Sans Pro untuk body text
+        body: ['Plus Jakarta Sans'], // Mengganti Lato dengan Plus Jakarta Sans untuk body text
       },
       typography: ({ theme }: { theme: any }) => ({
         merah: {

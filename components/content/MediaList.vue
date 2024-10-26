@@ -5,28 +5,28 @@ import { withTrailingSlash } from 'ufo'
 const props = defineProps({
   path: {
     type: String,
-    default: 'pembelajaran',
+    default: 'media',
   },
 })
 const selected = ref([])
 
-const { data: _pembelajaran } = await useAsyncData('pembelajaran', async () => await queryContent(withTrailingSlash(props.path)).sort({ date: -1 }).find())
+const { data: _media } = await useAsyncData('media', async () => await queryContent(withTrailingSlash(props.path)).sort({ date: -1 }).find())
 
-const pembelajarans = computed(() => _pembelajaran.value || [])
+const medias = computed(() => _media.value || [])
 
-const listkelas = pembelajarans.value.map(pembelajaran => pembelajaran.kelas)
+const listkelas = medias.value.map(media => media.kelas)
 </script>
 
 <template>
-  <UContainer v-if="pembelajarans?.length" class="py-4 md:py-8">
+  <UContainer v-if="medias?.length" class="py-4 md:py-8">
     <div class="  mx-auto ">
       <!-- Title -->
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
         <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="title">
-          Pembelajaran
+          media
         </h1>
         <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="mt-1 text-gray-600 dark:text-gray-400">
-          Kumpulan Sumber Pembelajaran
+          Kumpulan Sumber media
         </p>
       </div>
       <!-- End Title -->
@@ -39,7 +39,7 @@ const listkelas = pembelajarans.value.map(pembelajaran => pembelajaran.kelas)
       >
         <!-- Card -->
 
-        <PembelajaranListItem v-for="(pembelajaran, index) in pembelajarans.slice(0)" :key="index" :pembelajaran="pembelajaran" />
+        <MediaListItem v-for="(media, index) in medias.slice(0)" :key="index" :media="media" />
 
         <!-- End Card -->
       </div>
@@ -47,11 +47,13 @@ const listkelas = pembelajarans.value.map(pembelajaran => pembelajaran.kelas)
     </div>
   </UContainer>
   <div v-else class="tour">
-    <p>Seems like there are no beritas yet.</p>
-    <p>
-      You can start by
-      <!-- eslint-disable-next-line -->
+    <UContainer>
+      <p>Seems like there are no beritas yet.</p>
+      <p>
+        You can start by
+        <!-- eslint-disable-next-line -->
       <ProseA href="https://alpine.nuxt.space/beritas/write-beritas">creating</ProseA> one in the <ProseCodeInline>beritas</ProseCodeInline> folder.
-    </p>
+      </p>
+    </UContainer>
   </div>
 </template>

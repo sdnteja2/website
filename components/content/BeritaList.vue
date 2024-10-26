@@ -46,7 +46,7 @@ const beritas = computed(() => (_berita.value || []).slice(0, 10)) // Tampilkan 
       </ul>
     </div>
   </UContainer>
-  <div v-else class="tour">
+  <UContainer v-else class="tour">
     <div class="flex flex-col space-y-4">
       <!-- Tanggal Placeholder -->
       <div class="flex justify-end">
@@ -72,5 +72,5 @@ const beritas = computed(() => (_berita.value || []).slice(0, 10)) // Tampilkan 
         <USkeleton class="h-4 w-24" />
       </div>
     </div>
-  </div>
+  </UContainer>
 </template>

@@ -76,26 +76,26 @@ const id = computed(() => {
           </UBadge>
         </div>
         <div class="mb-2">
-          <h2 class="font-semibold font-body leading-tight text-gray-800 dark:text-gray-300 ">
+          <h2 class="font-semibold font-body line-clamp-2 leading-tight text-base dark:text-white text-gray-800  ">
             {{ article.title }}
           </h2>
         </div>
       </NuxtLink>
-      <template #footer>
-        <div class="flex flex-wrap ">
-          <NuxtLink
-            v-for="(tag, n) in article.tags"
-            :key="n" rel="tag"
-            :title="`Tags: ${tag}`"
 
-            :to="`/tags#${tag}`" class="uppercase"
-          >
-            <UBadge size="xs" class="mr-2">
-              {{ tag }}
-            </UBadge>
-          </NuxtLink>
-        </div>
-      </template>
+      <div class="flex mt-4 flex-wrap ">
+        <NuxtLink
+          v-for="(tag, n) in article.tags.slice(0, 3)"
+          :key="n"
+          rel="tag"
+          :title="`Tags: ${tag}`"
+          :to="`/tags#${tag}`"
+          class="uppercase"
+        >
+          <UBadge size="xs" color="gray" class="mr-2 text-xs">
+            {{ tag }}
+          </UBadge>
+        </NuxtLink>
+      </div>
     </UCard>
   </article>
 </template>

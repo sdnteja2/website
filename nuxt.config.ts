@@ -43,13 +43,13 @@ export default defineNuxtConfig({
       {
         name: 'Montserrat',
         provider: 'google',
-        weights: [100, 300, 400, 500, 700, 900], // Heading font
+        weights: [200, 300, 400, 500, 600, 700, 800, 900], // Heading font
         styles: ['normal', 'italic'],
       },
       {
-        name: 'Source Sans Pro',
+        name: 'Plus Jakarta Sans',
         provider: 'google',
-        weights: [200, 300, 400, 600, 700, 900], // Body font
+        weights: [200, 300, 400, 500, 600, 700, 800, 900], // Body font
         styles: ['normal', 'italic'],
       },
     ],
