@@ -39,16 +39,13 @@ const remainingText = props.title.substring(3) // Sisa teks
 
           <!-- Image -->
           <div class="flex justify-center lg:justify-end">
-            <div class="w-full max-w-md lg:max-w-xl aspect-w-16 aspect-h-9">
-              <NuxtImg
-                class="w-full h-full rounded-xl object-cover object-center shadow-lg"
-                :src="image"
-                height="500"
-                width="500"
-                format="webp"
-                alt="Hero Image"
-              />
-            </div>
+            <CldImage
+              src="https://res.cloudinary.com/dyy24w5kl/image/upload/v1729926403/image/fotobersama_3x_mbgo9l.jpg"
+              width="1600"
+              height="900"
+              alt="My Awesome Image"
+              class="aspect-[16/9] w-full rounded-md shadow-md h-auto object-cover"
+            />
           </div>
           <!-- End Image -->
         </div>

@@ -16,7 +16,7 @@ defineProps({
   },
   foto: {
     type: String,
-    default: '/img/guru/yusup.webp',
+    default: 'guru/1yusupsquare.jpg', // Tidak termasuk cloud name atau direktori 'upload'
   },
 })
 
@@ -50,19 +50,27 @@ onMounted(() => {
     <UContainer class=" px-4 py-10 sm:px-16  lg:py-14 mx-auto">
       <!-- Grid -->
       <div class="md:grid h-full gap-6 md:grid-cols-2  md:justify-center md:items-center">
-        <UCard>
-          <div class="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-50 dark:text-gray-800">
-            <img src="https://source.unsplash.com/random/100x100?4" alt="" class="w-20 h-20 rounded-full dark:bg-gray-500">
+        <UCard class="h-full">
+          <div class="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 ">
+            <div class="h-40 w-40">
+              <CldImage
+                :src="foto"
+                width="500"
+                height="500"
+                alt="My Awesome Image"
+                class="  rounded-md shadow-md  object-cover"
+              />
+            </div>
             <blockquote class="max-w-lg text-lg italic font-medium text-center">
-              "Et, dignissimos obcaecati. Recusandae praesentium doloribus vitae? Rem unde atque mollitia!"
+              {{ ucapan }}
             </blockquote>
             <div class="text-center dark:text-gray-600">
-              <p>Leroy Jenkins</p>
-              <p>CEO of Company Co.</p>
+              <h2>{{ nama }}</h2>
+              <p>{{ jabatan }}</p>
             </div>
           </div>
         </UCard>
-        <UCard>
+        <UCard class="h-full">
           <div class="w-full ">
             <UCarousel
               ref="carouselRef"

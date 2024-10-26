@@ -5,6 +5,9 @@
 <template>
   <!-- <SpeedInsights /> -->
   <div>
-    <ContentDoc />
+    <NuxtLayout>
+      <NavBar />
+      <ContentDoc />
+    </NuxtLayout>
   </div>
 </template>

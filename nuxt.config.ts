@@ -1,10 +1,10 @@
+/* eslint-disable node/prefer-global/process */
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/ui', '@nuxt/fonts', '@nuxt/eslint', '@nuxt/image', '@nuxt/content', '@nuxtjs/seo'],
+  modules: ['@nuxt/ui', '@nuxt/fonts', '@nuxt/eslint', '@nuxt/image', '@nuxt/content', '@nuxtjs/seo', '@nuxtjs/cloudinary'],
   ui: {
-
     global: true,
   },
   colorMode: {
@@ -12,7 +12,6 @@ export default defineNuxtConfig({
   },
   content: {
     documentDriven: true,
-
     navigation: {
       fields: ['navTitle'],
     },
@@ -33,6 +32,11 @@ export default defineNuxtConfig({
     description: 'Website resmi SDN Teja 2, Kecamatan Rajagaluh, Kabupaten Majalengka, Jawa Barat',
     defaultLocale: 'id', // not needed if you have @nuxtjs/i18n installed
     themeColor: '#F22727',
+  },
+  cloudinary: {
+
+    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    apiKey: process.env.CLOUDINARY_API_KEY,
   },
   fonts: {
     families: [
