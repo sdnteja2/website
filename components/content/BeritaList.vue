@@ -24,31 +24,26 @@ const beritas = computed(() => (_berita.value || []).slice(0, 10)) // Tampilkan 
 <template>
   <UContainer v-if="beritas?.length" class="py-4 md:py-8">
     <div class="max-w-3xl  mx-auto ">
+      <!-- List -->
+
+      <!-- End List -->
       <!-- Title -->
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="title">
+        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="headline">
           Berita  SDN Teja II
         </h1>
-        <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="mt-1 text-gray-600 dark:text-gray-400">
+        <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="mt-1 subheadline">
           Berita yang di publikasikan oleh SDN Teja II
         </p>
       </div>
-      <!-- End Title -->
-
-      <!-- Grid -->
-      <div
-        class="grid grid-cols-1 gap-6"
-      >
-        <!-- Card -->
+      <ul class="space-y-10">
         <div class="featured">
           <BeritaListItem :berita="beritas[0]" :featured="true" />
         </div>
         <div class="layout">
           <BeritaListItem v-for="(berita, index) in beritas.slice(1)" :key="index" :berita="berita" />
         </div>
-        <!-- End Card -->
-      </div>
-      <!-- End Grid -->
+      </ul>
     </div>
   </UContainer>
   <div v-else class="tour">

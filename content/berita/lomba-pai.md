@@ -1,5 +1,6 @@
 ---
 title: "Lomaba PAI"
+descriptioon: "Pendidikan adalah kunci bagi kemajuan suatu bangsa. Guru memiliki peran penting dalam membentuk masa depan generasi muda."
 date: 2023-12-31
 tags: [lomba, guru, pendidikan, agama]
 layout: berita
