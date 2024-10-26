@@ -17,11 +17,11 @@ defineOgImageComponent('OgImage', {
       />
       <UCard>
         <div class="flex flex-col  space-y-2">
-          <h1 class="title">
+          <h1 class="subheadline">
             {{ page.title }}
           </h1>
           <div class="mx-auto aspect-square">
-            <NuxtImg
+            <CldImage
               class="rounded-lg w-64 h-64 object-cover"
               :src="page.foto"
               :alt="page.title"

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { defineProps, onMounted, ref } from 'vue'
 
 defineProps({
   nama: {
@@ -16,17 +16,17 @@ defineProps({
   },
   foto: {
     type: String,
-    default: 'guru/1yusupsquare.jpg', // Tidak termasuk cloud name atau direktori 'upload'
+    default: 'guru/1yusupsquare.jpg',
   },
 })
 
+// Array items dengan URL gambar dan label
 const items = [
-  'https://a.storyblok.com/f/255043/1416x1062/14a8939cf4/whatsapp-image-2024-02-27-at-16-14-10.jpeg',
-  'https://a.storyblok.com/f/255043/1416x1062/f4cfe8d8f4/whatsapp-image-2024-02-27-at-16-14-10-1.jpeg',
-  'https://a.storyblok.com/f/255043/1280x959/e6eab3e2d6/whatsapp-image-2024-02-27-at-16-14-08.jpeg',
-  'https://a.storyblok.com/f/255043/1280x959/a99d791feb/whatsapp-image-2024-02-27-at-16-14-07-1.jpeg',
-  'https://a.storyblok.com/f/255043/1280x959/350c22b6c0/whatsapp-image-2024-02-27-at-16-14-03-1.jpeg',
-
+  { src: 'https://a.storyblok.com/f/255043/1416x1062/14a8939cf4/whatsapp-image-2024-02-27-at-16-14-10.jpeg', label: 'Perpustakaan' },
+  { src: 'https://a.storyblok.com/f/255043/1416x1062/f4cfe8d8f4/whatsapp-image-2024-02-27-at-16-14-10-1.jpeg', label: 'WC' },
+  { src: 'https://a.storyblok.com/f/255043/1280x959/e6eab3e2d6/whatsapp-image-2024-02-27-at-16-14-08.jpeg', label: 'Lab Komputer' },
+  { src: 'https://a.storyblok.com/f/255043/1280x959/a99d791feb/whatsapp-image-2024-02-27-at-16-14-07-1.jpeg', label: 'Ruang Guru' },
+  { src: 'https://a.storyblok.com/f/255043/1280x959/350c22b6c0/whatsapp-image-2024-02-27-at-16-14-03-1.jpeg', label: 'Kantin' },
 ]
 
 const carouselRef = ref()
@@ -36,10 +36,12 @@ onMounted(() => {
     if (!carouselRef.value)
       return
 
-    if (carouselRef.value.page === carouselRef.value.pages)
-      return carouselRef.value.select(0)
-
-    carouselRef.value.next()
+    if (carouselRef.value.page === carouselRef.value.pages) {
+      carouselRef.value.select(0)
+    }
+    else {
+      carouselRef.value.next()
+    }
   }, 3000)
 })
 </script>
@@ -47,49 +49,74 @@ onMounted(() => {
 <template>
   <div>
     <!-- Testimonials -->
-    <UContainer class=" px-4 py-10 sm:px-16  lg:py-14 mx-auto">
+    <UContainer class="px-4 py-10 sm:px-16 lg:py-14 mx-auto">
       <!-- Grid -->
-      <div class="md:grid h-full gap-6 md:grid-cols-2  md:justify-center md:items-center">
+      <div class="grid grid-cols-1 h-full  gap-6 md:grid-cols-2 md:justify-center md:items-center">
+        <!-- Card untuk Foto dan Deskripsi -->
         <UCard class="h-full">
-          <div class="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 ">
+          <template #header>
+            <h2 class="subheadline ">
+              Selayang Pandang
+            </h2>
+          </template>
+          <div class="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8">
             <div class="h-40 w-40">
               <CldImage
                 :src="foto"
                 width="500"
                 height="500"
                 alt="My Awesome Image"
-                class="  rounded-md shadow-md  object-cover"
+                class="rounded-md shadow-md object-cover"
               />
             </div>
-            <blockquote class="max-w-lg text-lg italic font-medium text-center">
+            <blockquote class="max-w-lg italic font-medium text-center">
               {{ ucapan }}
             </blockquote>
-            <div class="text-center dark:text-gray-600">
+            <div class="text-center">
               <h2>{{ nama }}</h2>
               <p>{{ jabatan }}</p>
             </div>
           </div>
         </UCard>
+
+        <!-- Card untuk Carousel -->
         <UCard class="h-full">
-          <div class="w-full ">
+          <template #header>
+            <h2 class="subheadline ">
+              Fasilitas
+            </h2>
+          </template>
+          <div class="w-full">
             <UCarousel
               ref="carouselRef"
               v-slot="{ item }"
               :items="items"
-              :ui="{ item: 'basis-full' }"
-              class="rounded-lg  overflow-hidden"
+              :ui="{ item: 'w-full',
+                     indicators: {
+                       wrapper: 'relative bottom-0 mt-4',
+                     },
+                     container: 'rounded-lg' }"
+
+              class="rounded-lg overflow-hidden"
+              arrows="true"
+              indicators="true"
             >
-              <USkeleton class="aspect-w-16 aspect-h-9" :ui="{ rounded: 'rounded-md' }" />
-              <NuxtImg
-                data-aos="fade-up" data-aos-anchor-placement="top-bottom" :src="item" class="w-full h-52 md:h-64 object-cover rounded-md "
-                draggable="false"
-                height="480"
-                width="720"
-                loading="lazy"
-                title="fasilitas"
-                alt="fasilitas"
-                :placeholder="[50, 25, 75, 5]"
-              />
+              <div class="flex flex-col">
+                <NuxtImg
+                  :src="item.src"
+                  :alt="item.label"
+                  class="w-full object-cover rounded-md"
+                  draggable="false"
+                  height="480"
+                  width="720"
+                  loading="lazy"
+                  title="fasilitas"
+                />
+                <!-- Label untuk Gambar -->
+                <div class="text-center mt-2 text-sm font-semibold">
+                  {{ item.label }}
+                </div>
+              </div>
             </UCarousel>
           </div>
         </UCard>
@@ -99,5 +126,3 @@ onMounted(() => {
     <!-- End Testimonials -->
   </div>
 </template>
-
-<style scoped></style>

@@ -17,12 +17,12 @@ const guru = computed(() => _guru.value || [])
   <UContainer class="py-4 md:py-8md:px-10 mx-auto">
     <div v-if="guru?.length">
       <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 class="">
+        <h1 class="headline block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
           Guru & Staff
         </h1>
-        <p class="mt-1 text-gray-600 dark:text-gray-400">
+        <h2 class="-mt-4 subheadline ">
           SDN Teja II
-        </p>
+        </h2>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -30,67 +30,71 @@ const guru = computed(() => _guru.value || [])
           v-for="list in guru" :key="list.id" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
           class=""
         >
-          <div class="flex items-center gap-x-4">
-            <NuxtImg
-              class="rounded-full bg-top bg-cover object-cover w-16 h-16" :src="list.foto"
-              :alt="list.title"
-              :title="`Foto ${list.title}`"
-              loading="lazy"
-              height="500"
-              width="500"
-              :placeholder="[50, 25, 75, 5]"
-            />
+          <div class="flex flex-col justify-center md:flex-row items-center gap-y-4 gap-x-4">
+            <div class="md:h-36 h-52 w-52 md:w-36">
+              <CldImage
+                class="rounded-md  bg-fit bg-center " :src="list.foto"
+                :alt="list.title || ''"
+                :title="`Foto ${list.title}`"
+                loading="lazy"
+                height="500"
+                width="500"
+                :placeholder="[50, 25, 75, 5]"
+              />
+            </div>
+
             <div class="grow">
-              <NuxtLink
+              <UButton
+                variant="outline"
                 :to="list._path"
                 :title="list.title"
-                rel="author"
+                rel="author" block
               >
-                <h2 class="font-bold  text-merah ">
+                <h2 class="text-left font-bold tracking-wide">
                   {{ list.title }}
                 </h2>
-              </NuxtLink>
-              <p class="text-xs ">
-                {{ list.jabatan }}
-              </p>
-              <p class="text-xs ">
-                NIP. {{ list.nip }}
-              </p>
+              </UButton>
+
+              <div class="py-2">
+                <p class="text-xs text-center ">
+                  {{ list.jabatan }}
+                </p>
+              </div>
+              <div class="w-full flex justify-center items-center">
+                <UButton
+                  icon="i-basil-instagram-outline" size="sm"
+                  color="primary"
+                  variant="ghost"
+                  square
+                  :to="list.instagram"
+                  target="_blank"
+                  :title="`Follow ${list.title} on Instagram`"
+                />
+                <UButton
+                  icon="i-basil-facebook-solid" size="sm"
+                  color="primary"
+                  variant="ghost"
+                  square
+                  :to="list.facebook"
+                  target="_blank"
+                  :title="`Follow ${list.title} on Facebook`"
+                />
+                <UButton
+                  icon="i-basil-gmail-outline" size="sm" color="primary" variant="ghost" square
+                  :to="`mailto:${list.email}`"
+                  target="_blank"
+                  :title="`Send an email to ${list.title}`"
+                />
+              </div>
             </div>
           </div>
 
-          <p class="italic py-2 text-sm">
-            "{{ list.description }}"
-          </p>
-          <!-- Social Brands -->
-          <template #footer>
-            <div class="w-full flex justify-end items-center">
-              <UButton
-                icon="i-basil-instagram-outline" size="sm"
-                color="primary"
-                variant="ghost"
-                square
-                :to="list.instagram"
-                target="_blank"
-                :title="`Follow ${list.title} on Instagram`"
-              />
-              <UButton
-                icon="i-basil-facebook-solid" size="sm"
-                color="primary"
-                variant="ghost"
-                square
-                :to="list.facebook"
-                target="_blank"
-                :title="`Follow ${list.title} on Facebook`"
-              />
-              <UButton
-                icon="i-basil-gmail-outline" size="sm" color="primary" variant="ghost" square
-                :to="`mailto:${list.email}`"
-                target="_blank"
-                :title="`Send an email to ${list.title}`"
-              />
-            </div>
-          </template>
+          <div class="md:pt-4">
+            <p class="italic py-2 text-sm">
+              "{{ list.description }}"
+            </p>
+          </div>
+
           <!-- End Social Brands -->
         </UCard>
       </div>
