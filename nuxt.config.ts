@@ -54,4 +54,23 @@ export default defineNuxtConfig({
       },
     ],
   },
+  routeRules: {
+    // Home pre-rendered at build time
+    '/': { prerender: true },
+
+    // Guru page cached with stale-while-revalidate (background revalidation)
+    '/guru': { swr: true },
+
+    // Berita page generated on demand, cached in CDN for 1 hour
+    '/berita': { isr: 3600 },
+
+    // Artikel page cached with swr for 1 hour
+    '/artikel': { swr: 3600 },
+
+    // Media page only rendered on client-side
+    '/media': { ssr: false },
+
+    // Kegiatan page generated on demand, cached on CDN
+    '/kegiatan': { isr: true },
+  },
 })

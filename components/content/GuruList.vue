@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { withTrailingSlash } from 'ufo'
+import { computed, ref } from 'vue'
 
 const props = defineProps({
   path: {
@@ -8,37 +9,46 @@ const props = defineProps({
   },
 })
 
-const { data: _guru } = await useAsyncData('guru', async () => await queryContent(withTrailingSlash(props.path)).sort({ date: -1 }).find())
+// useAsyncData tanpa await, dengan caching
+const { data: _guru } = useAsyncData(
+  'guru',
+  () => queryContent(withTrailingSlash(props.path)).sort({ date: -1 }).find(),
+)
 
+// Komputasi data guru
 const guru = computed(() => _guru.value || [])
 </script>
 
 <template>
-  <UContainer class="py-4 md:py-8md:px-10 mx-auto">
+  <UContainer class="py-4 md:py-8 md:px-10 mx-auto">
     <div v-if="guru?.length">
       <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
         <h1 class="headline block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
           Guru & Staff
         </h1>
-        <h2 class="-mt-4 subheadline ">
+        <h2 class="-mt-4 subheadline">
           SDN Teja II
         </h2>
       </div>
 
+      <!-- Tampilkan Guru dengan Lazy Loading -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <UCard
-          v-for="list in guru" :key="list.id" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-          class=""
+          v-for="list in guru"
+          :key="list.id"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
         >
           <div class="flex flex-col justify-center md:flex-row items-center gap-y-4 gap-x-4">
             <div class="md:h-36 h-52 w-52 md:w-36">
               <CldImage
-                class="rounded-md  bg-fit bg-center " :src="list.foto"
+                class="rounded-md bg-fit bg-center"
+                :src="list.foto"
                 :alt="list.title || ''"
                 :title="`Foto ${list.title}`"
                 loading="lazy"
-                height="500"
-                width="500"
+                height="300"
+                width="300"
                 :placeholder="[50, 25, 75, 5]"
               />
             </div>
@@ -48,7 +58,8 @@ const guru = computed(() => _guru.value || [])
                 variant="outline"
                 :to="list._path"
                 :title="list.title"
-                rel="author" block
+                rel="author"
+                block
               >
                 <h2 class="text-left font-bold tracking-wide">
                   {{ list.title }}
@@ -56,13 +67,15 @@ const guru = computed(() => _guru.value || [])
               </UButton>
 
               <div class="py-2">
-                <p class="text-xs text-center ">
+                <p class="text-xs text-center">
                   {{ list.jabatan }}
                 </p>
               </div>
+
               <div class="w-full flex justify-center items-center">
                 <UButton
-                  icon="i-basil-instagram-outline" size="sm"
+                  icon="i-basil-instagram-outline"
+                  size="sm"
                   color="primary"
                   variant="ghost"
                   square
@@ -71,7 +84,8 @@ const guru = computed(() => _guru.value || [])
                   :title="`Follow ${list.title} on Instagram`"
                 />
                 <UButton
-                  icon="i-basil-facebook-solid" size="sm"
+                  icon="i-basil-facebook-solid"
+                  size="sm"
                   color="primary"
                   variant="ghost"
                   square
@@ -80,7 +94,11 @@ const guru = computed(() => _guru.value || [])
                   :title="`Follow ${list.title} on Facebook`"
                 />
                 <UButton
-                  icon="i-basil-gmail-outline" size="sm" color="primary" variant="ghost" square
+                  icon="i-basil-gmail-outline"
+                  size="sm"
+                  color="primary"
+                  variant="ghost"
+                  square
                   :to="`mailto:${list.email}`"
                   target="_blank"
                   :title="`Send an email to ${list.title}`"
@@ -94,17 +112,17 @@ const guru = computed(() => _guru.value || [])
               "{{ list.description }}"
             </p>
           </div>
-
-          <!-- End Social Brands -->
         </UCard>
       </div>
     </div>
+
     <div v-else class="tour">
       <p>Seems like there are no guru yet.</p>
       <p>
         You can start by
-        <!-- eslint-disable-next-line -->
-      <ProseA href="https://alpine.nuxt.space/guru/write-guru">creating</ProseA> one in the <ProseCodeInline>guru</ProseCodeInline> folder.
+        <ProseA href="https://alpine.nuxt.space/guru/write-guru">
+          creating
+        </ProseA> one in the <ProseCodeInline>guru</ProseCodeInline> folder.
       </p>
     </div>
   </UContainer>
