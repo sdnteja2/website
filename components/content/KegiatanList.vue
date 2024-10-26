@@ -5,17 +5,17 @@ import { withTrailingSlash } from 'ufo'
 const props = defineProps({
   path: {
     type: String,
-    default: 'galeri',
+    default: 'kegiatan',
   },
 })
 
-const { data: _galeri } = await useAsyncData('galeri', async () => await queryContent(withTrailingSlash(props.path)).sort({ date: -1 }).find())
+const { data: _kegiatan } = await useAsyncData('kegiatan', async () => await queryContent(withTrailingSlash(props.path)).sort({ date: -1 }).find())
 
-const galeris = computed(() => _galeri.value || [])
+const kegiatans = computed(() => _kegiatan.value || [])
 </script>
 
 <template>
-  <UContainer v-if="galeris?.length" class="py-4 md:py-8">
+  <UContainer v-if="kegiatans?.length" class="py-4 md:py-8">
     <div class="  mx-auto ">
       <!-- Title -->
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
@@ -28,7 +28,7 @@ const galeris = computed(() => _galeri.value || [])
       </div>
 
       <div class="grid  md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <GaleriListItem v-for="(galeri, index) in galeris.slice(0)" :key="index" :galeri="galeri" />
+        <GaleriListItem v-for="(kegiatan, index) in kegiatans.slice(0)" :key="index" :kegiatan="kegiatan" />
       </div>
       <!-- End Grid -->
     </div>

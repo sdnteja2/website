@@ -54,6 +54,17 @@ export default defineNuxtConfig({
       },
     ],
   },
+  css: [
+    '~/node_modules/lite-youtube-embed/src/lite-yt-embed.css',
+  ],
+  build: {
+    transpile: ['lite-youtube'],
+  },
+  vue: {
+    compilerOptions: {
+      isCustomElement: tag => ['lite-youtube'].includes(tag),
+    },
+  },
   // routeRules: {
   //   // Home pre-rendered at build time
   //   '/': { prerender: true },

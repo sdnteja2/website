@@ -25,7 +25,7 @@
     @apply hover:bg-merah-50 duration-100    hover:divide-merah-200  transition hover:ring-merah-200     dark:hover:bg-gelap-800    dark:hover:divide-gelap-700  dark:hover:ring-gelap-700;
   }
   .headline {
-    @apply text-balance mb-4 md:mb-6 py-2 md:text-4xl  text-3xl font-bold ;
+    @apply text-balance mb-4 md:mb-6 py-2 md:text-4xl  text-3xl font-bold;
   }
   .subheadline {
     @apply mt-3 mb-6 text-center max-w-3xl text-lg md:text-2xl tracking-wide m-0 p-0 text-merah-950 dark:text-kuning mx-auto;

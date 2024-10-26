@@ -1,7 +1,6 @@
 <!-- eslint-disable ts/ban-ts-comment -->
 <script setup lang="ts">
 import { withTrailingSlash } from 'ufo'
-import { computed } from 'vue'
 
 // Define Props
 const props = defineProps({

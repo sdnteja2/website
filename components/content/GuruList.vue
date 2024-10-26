@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { withTrailingSlash } from 'ufo'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps({
   path: {

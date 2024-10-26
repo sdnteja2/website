@@ -28,6 +28,7 @@
     "@nuxt/ui": "^2.18.7",
     "@nuxtjs/seo": "^2.0.0-rc.23",
     "eslint": "^9.12.0",
-    "eslint-plugin-format": "^0.1.2"
+    "eslint-plugin-format": "^0.1.2",
+    "lite-youtube-embed": "^0.3.3"
   }
 }

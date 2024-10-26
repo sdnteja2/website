@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useContentPreview } from '#imports'
 
-interface Galeri {
+interface Kegiatan {
   _path: string
   title: string
   description: string
@@ -9,10 +9,10 @@ interface Galeri {
 }
 
 const props = defineProps({
-  galeri: {
+  kegiatan: {
     type: Object,
     required: true,
-    validator: (value: Galeri) => {
+    validator: (value: Kegiatan) => {
       if (value?._path && value.title)
         return true
       return false
@@ -25,14 +25,14 @@ const props = defineProps({
 })
 
 const id = computed(() => {
-  return (process.dev || useContentPreview()?.isEnabled()) ? props.galeri?._id : undefined
+  return (process.dev || useContentPreview()?.isEnabled()) ? props.kegiatan?._id : undefined
 })
 const isOpen = ref(false)
 </script>
 
 <template>
   <article
-    v-if="galeri._path && galeri.title" data-aos="fade-up"
+    v-if="kegiatan._path && kegiatan.title" data-aos="fade-up"
     data-aos-anchor-placement="top-bottom"
     :data-content-id="id"
   >
@@ -48,11 +48,11 @@ const isOpen = ref(false)
     >
       <div class="aspect-square " @click="isOpen = true">
         <NuxtImg
-          v-if="galeri.image"
+          v-if="kegiatan.image"
           class=" object-cover  rounded-md"
-          :src="galeri.image"
-          :alt="galeri.title"
-          :title="galeri.title"
+          :src="kegiatan.image"
+          :alt="kegiatan.title"
+          :title="kegiatan.title"
           loading="lazy"
           width="500"
           height="500"
@@ -63,7 +63,7 @@ const isOpen = ref(false)
       <template #footer>
         <div>
           <p class="line-clamp-1 text-sm">
-            {{ galeri.title }}
+            {{ kegiatan.title }}
           </p>
         </div>
       </template>
@@ -93,13 +93,13 @@ const isOpen = ref(false)
 
         <NuxtImg
           class=" object-cover rounded-md aspect-video"
-          :src="galeri.image"
-          :alt="galeri.title"
+          :src="kegiatan.image"
+          :alt="kegiatan.title"
           :placeholder="[50, 25, 75, 5]"
         />
         <template #footer>
           <p class="">
-            {{ galeri.title }}
+            {{ kegiatan.title }}
           </p>
         </template>
       </UCard>
