@@ -19,12 +19,12 @@ const kegiatans = computed(() => _kegiatan.value || [])
     <div class="  mx-auto ">
       <!-- Title -->
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="title">
+        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="headline block text-4xl sm:text-5xl  font-black leading-tight">
           Galeri  SDN Teja II
         </h1>
-        <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="mt-1 text-gray-600 dark:text-gray-400">
+        <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="-mt-4 subheadline">
           Galeri kegiatan SDN Teja II
-        </p>
+        </h2>
       </div>
 
       <div class="grid  md:grid-cols-2 lg:grid-cols-3 gap-6">
