@@ -78,7 +78,7 @@ export default defineNuxtConfig({
     gitInfo: {
       name: 'sdnteja2',
       owner: 'sdnteja2',
-      url: 'https://github.com/sdnteja2/website',
+      url: 'https://sdnteja2.sch.id/',
     },
   },
   // routeRules: {
