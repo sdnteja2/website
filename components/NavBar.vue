@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const open = ref(false)
+
 const trailingIcon = computed(() => open.value ? 'i-hugeicons-cancel-02' : 'i-hugeicons-dashboard-square-01')
 const links = [
   [{
@@ -59,8 +60,9 @@ const links = [
             :links="links"
             class="hidden md:block"
           />
-          <div class="flex items-center">
+          <div class="flex space-x-2 items-center">
             <DarkMode />
+            <DocsSearchButton />
           </div>
           <UDropdown
             v-model:open="open" :ui="{
