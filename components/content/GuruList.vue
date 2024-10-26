@@ -117,13 +117,7 @@ const guru = computed(() => _guru.value || [])
     </div>
 
     <div v-else class="tour">
-      <p>Seems like there are no guru yet.</p>
-      <p>
-        You can start by
-        <ProseA href="https://alpine.nuxt.space/guru/write-guru">
-          creating
-        </ProseA> one in the <ProseCodeInline>guru</ProseCodeInline> folder.
-      </p>
+      <p>Sabarr sedang loading</p>
     </div>
   </UContainer>
 </template>

@@ -1,7 +1,9 @@
 <!-- eslint-disable ts/ban-ts-comment -->
 <script setup lang="ts">
 import { withTrailingSlash } from 'ufo'
+import { computed } from 'vue'
 
+// Define Props
 const props = defineProps({
   path: {
     type: String,
@@ -9,9 +11,14 @@ const props = defineProps({
   },
 })
 
-const { data: _berita } = await useAsyncData('berita', async () => await queryContent(withTrailingSlash(props.path)).sort({ date: -1 }).find())
+// useAsyncData tanpa `await` dan mengaktifkan `cache`
+const { data: _berita } = useAsyncData(
+  'berita',
+  () => queryContent(withTrailingSlash(props.path)).sort({ date: -1 }).find(),
+)
 
-const beritas = computed(() => _berita.value || [])
+// Komputasi data berita dengan pembatasan jumlah
+const beritas = computed(() => (_berita.value || []).slice(0, 10)) // Tampilkan 10 data pertama
 </script>
 
 <template>

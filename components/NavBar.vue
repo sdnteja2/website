@@ -33,7 +33,17 @@ const links = [
 <template>
   <div class="w-full fixed top-0 z-50 bg-merah-600/90 dark:bg-merah-900/85 backdrop-blur">
     <UContainer class="flex h-14 md:h-16 justify-between items-center">
-      <div>LOGO</div>
+      <div>
+        <NuxtLink to="/">
+          <NuxtImg
+            src="/sdnteja2.png"
+            alt="Logo Sekolah"
+            width="100"
+            height="100"
+            class="w-10 h-10 md:w-12 md:h-12"
+          />
+        </NuxtLink>
+      </div>
       <div class="flex items-center space-x-4">
         <div class="flex items-center">
           <UHorizontalNavigation
@@ -52,8 +62,13 @@ const links = [
           <div class="flex items-center">
             <DarkMode />
           </div>
-          <UDropdown v-model:open="open" class="md:hidden" :items="links" :popper="{ placement: 'bottom-start' }">
-            <UButton color="merah" variant="ghost" :trailing-icon="trailingIcon" />
+          <UDropdown
+            v-model:open="open" :ui="{
+              item: {
+                base: 'group flex items-center gap-1.5 my-1 w-full' },
+            }" class="md:hidden" :items="links" :popper="{ placement: 'bottom-start' }"
+          >
+            <UButton color="gray" variant="ghost" :trailing-icon="trailingIcon" class="text-kuning-200" />
           </UDropdown>
         </div>
       </div>

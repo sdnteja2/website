@@ -5,8 +5,8 @@
 <template>
   <!-- <SpeedInsights /> -->
   <div>
+    <NavBar />
     <NuxtLayout>
-      <NavBar />
       <ContentDoc />
     </NuxtLayout>
   </div>

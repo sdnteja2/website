@@ -59,7 +59,7 @@ export default defineNuxtConfig({
     '/': { prerender: true },
 
     // Guru page cached with stale-while-revalidate (background revalidation)
-    '/guru': { swr: true },
+    '/guru': { swr: true, prerender: true },
 
     // Berita page generated on demand, cached in CDN for 1 hour
     '/berita': { isr: 3600 },

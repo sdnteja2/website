@@ -2,14 +2,13 @@
 const { page } = useContent()
 
 defineOgImageComponent('OgImage', {
-  title: page.title,
-  description: page.description,
+  title: page.value?.title,
+  description: page.value?.description || '',
 })
 </script>
 
 <template>
   <div>
-    <Navbar />
     <UContainer class="py-14 md:py-16">
       <div class="max-w-3xl mx-auto">
         <UBreadcrumb
