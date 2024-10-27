@@ -66,11 +66,11 @@ const mediaTerkait = [
   <UContainer v-if="medias?.length" class="py-4 md:pt-8">
     <div class="  mx-auto ">
       <!-- Title -->
-      <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="headline block text-4xl sm:text-5xl  font-black leading-tight">
+      <div v-motion-fade-visible class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+        <h1 class="headline block text-4xl sm:text-5xl  font-black leading-tight">
           Media Pembelajaran
         </h1>
-        <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="-mt-4 subheadline">
+        <h2 class="-mt-4 subheadline">
           Kumpulan Sumber media
         </h2>
       </div>
@@ -80,13 +80,13 @@ const mediaTerkait = [
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 items-center gap-6">
         <NuxtLink
           v-for="media in mediaTerkait" :key="media.title"
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-bottom"
+
           :to="media.url"
           class="h-full"
           target="_blank"
         >
           <UCard
+            v-motion-fade-visible
             :ui="{
               body: {
                 base: '',
@@ -119,12 +119,13 @@ const mediaTerkait = [
         </NuxtLink>
       </div>
       <!-- Filter Kelas -->
-      <UDivider data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="my-4" />
-      <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class=" mt-8 subheadline">
+      <UDivider class="my-4" />
+      <h2 v-motion-fade-visible class=" mt-8 subheadline">
         Kumpulan video pembelajaran pilihan dari platform Youtube
       </h2>
       <USelectMenu
-        v-model="selected" data-aos="fade-up"
+        v-model="selected"
+        v-motion-fade-visible data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
         :ui="{ container: 'z-40 group' }"
         class="z-40 flex justify-center my-10 w-full md:w-1/3 mx-auto"

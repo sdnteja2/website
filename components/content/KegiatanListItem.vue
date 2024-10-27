@@ -37,6 +37,7 @@ const isOpen = ref(false)
     :data-content-id="id"
   >
     <UCard
+      v-motion-fade-visible
       :ui="{
         footer: {
           padding: 'px-2 py-2 sm:px-4',

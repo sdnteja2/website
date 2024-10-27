@@ -46,11 +46,11 @@ const beritaTerkait = [
 
       <!-- End List -->
       <!-- Title -->
-      <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="headline block text-4xl sm:text-5xl  font-black leading-tight">
+      <div v-motion-fade-visible class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+        <h1 class="headline block text-4xl sm:text-5xl  font-black leading-tight">
           Berita  SDN Teja II
         </h1>
-        <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="-mt-4 subheadline">
+        <h2 class="-mt-4 subheadline">
           Berita yang di publikasikan oleh SDN Teja II & Dinas Terkait
         </h2>
       </div>
@@ -64,6 +64,7 @@ const beritaTerkait = [
           target="_blank"
         >
           <UCard
+            v-motion-fade-visible
             :ui="{
               body: {
                 base: '',
@@ -76,7 +77,7 @@ const beritaTerkait = [
             <div>
               <NuxtImg
                 :src="berita.icon"
-                class="w-auto h-12  "
+                class="w-auto h-12 bg-merah-200 p-1 dark:bg-merah-800 rounded-md "
                 alt="icon"
                 format="webp"
               />

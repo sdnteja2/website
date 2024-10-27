@@ -41,6 +41,7 @@ const id = computed(() => {
     class="h-full x"
   >
     <UCard
+      v-motion-fade-visible
       :ui="{
         body: {
           padding: 'px-2 py-2 sm:px-4',

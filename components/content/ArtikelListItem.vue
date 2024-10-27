@@ -40,6 +40,7 @@ const id = computed(() => {
     class="h-full"
   >
     <UCard
+      v-motion-fade-visible
       :ui="
         {
           footer: {

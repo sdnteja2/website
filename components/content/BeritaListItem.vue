@@ -39,7 +39,7 @@ const id = computed(() => {
     :data-content-id="id"
     class="h-full"
   >
-    <li>
+    <li v-motion-fade-visible>
       <p class="mb-1 text-sm justify-end flex text-gray-500 dark:text-neutral-500">
         <UBadge size="xs" class="">
           <time>
