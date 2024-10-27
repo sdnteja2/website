@@ -19,10 +19,10 @@ const items = [
 
 <template>
   <UContainer class="py-16 md:py-24 max-w-5xl mx-auto">
-    <UTabs data-aos="fade-up" :items="items" size="lg" :default-index="1">
+    <UTabs :items="items" size="lg" :default-index="1">
       <template #misi>
         <div
-          data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+          v-motion-fade-visible
           class="px-6 bg-slate-100 shadow dark:bg-merah-900 py-2 rounded-md"
         >
           <div class="p-4">
@@ -53,7 +53,7 @@ const items = [
       </template>
       <template #tujuan>
         <div
-          data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+          v-motion-fade-visible
           class="px-6 bg-slate-100 shadow dark:bg-merah-900 py-2 rounded-md"
         >
           <div class="p-4">
@@ -68,7 +68,7 @@ const items = [
         </div>
       </template>
       <template #visi>
-        <div data-aos="fade-up" class="px-6 bg-slate-100 shadow dark:bg-merah-900 py-2 rounded-md">
+        <div v-motion-fade-visible class="px-6 bg-slate-100 shadow dark:bg-merah-900 py-2 rounded-md">
           <div class="p-4">
             Terwujudnya pribadi yang beriman dan bertakwa kepada Tuhan Tang Maha Esa, berilmu, berkarakter, terampil,
             kreatif dan berprestasi

@@ -22,7 +22,7 @@ const guru = computed(() => _guru.value || [])
 <template>
   <UContainer class="py-4 md:py-8 md:px-10 mx-auto">
     <div v-if="guru?.length">
-      <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+      <div v-motion-fade-visible class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
         <h1 class="headline block text-4xl sm:text-5xl  font-black leading-tight">
           Guru & Staff
         </h1>
@@ -36,6 +36,7 @@ const guru = computed(() => _guru.value || [])
         <UCard
           v-for="list in guru"
           :key="list.id"
+          v-motion-fade-visible
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
         >
@@ -127,7 +128,7 @@ const guru = computed(() => _guru.value || [])
         <!-- Skeleton Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Card Skeleton untuk Guru -->
-          <UCard v-for="n in 6" :key="n" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+          <UCard v-for="n in 6" :key="n">
             <div class="flex flex-col justify-center md:flex-row items-center gap-y-4 gap-x-4">
               <!-- Placeholder untuk Foto Profil -->
               <div class="md:h-36 h-52 w-52 md:w-36">

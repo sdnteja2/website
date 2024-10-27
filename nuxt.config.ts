@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxtjs/cloudinary',
     '@nuxthq/studio',
     '@nuxt/scripts',
+    '@vueuse/motion/nuxt',
   ],
   ui: {
     global: true,

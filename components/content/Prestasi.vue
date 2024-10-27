@@ -44,15 +44,16 @@ const rows = computed(() => {
 
 <template>
   <UContainer class="py-16 grid grid-cols-1 md:grid-cols-2 gap-6">
-    <UCard data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+    <UCard v-motion-fade-visibles>
       <div class="pb-8">
-        <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="subheadline">
+        <h2 class="subheadline">
           PRESTASI SDN TEJA II
         </h2>
       </div>
 
       <!-- Tabel dengan Paginasi -->
       <UTable
+        v-motion-fade-visible
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
         class="max-w-3xl mx-auto"
@@ -66,14 +67,14 @@ const rows = computed(() => {
     </UCard>
 
     <!-- Identitas Sekolah -->
-    <UCard data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+    <UCard v-motion-fade-visible>
       <div class="max-w-2xl mx-auto">
         <div class="pb-8">
-          <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="subheadline">
+          <h2 class="subheadline">
             Identitas Sekolah
           </h2>
         </div>
-        <UCard data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-sm space-x-0">
+        <UCard class="text-sm space-x-0">
           <!-- Iterasi untuk menampilkan data sekolah -->
           <div v-for="(info, index) in schoolInfo" :key="index" class="flex flex-row">
             <div class="w-1/4">

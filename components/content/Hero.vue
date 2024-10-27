@@ -28,18 +28,19 @@ const remainingText = props.title.substring(3) // Sisa teks
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8 grid lg:grid-cols-2 gap-10 items-center">
           <!-- Title and Description -->
           <div class="max-w-3xl text-center lg:text-left mx-auto lg:mx-0 space-y-6">
-            <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+            <h1 v-motion-fade-visible class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
               <span class="text-gelap-900 dark:text-kuning-500">{{ firstThreeChars }}</span>{{ remainingText }}
             </h1>
-            <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-lg ">
+            <p v-motion-fade-visible class="text-lg ">
               {{ props.description }}
             </p>
           </div>
           <!-- End Title and Description -->
 
           <!-- Image -->
-          <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="flex justify-center lg:justify-end">
+          <div class="flex justify-center lg:justify-end">
             <CldImage
+              v-motion-fade-visible
               src="https://res.cloudinary.com/dyy24w5kl/image/upload/v1729926403/image/fotobersama_3x_mbgo9l.jpg"
               width="1600"
               height="900"
@@ -53,4 +54,3 @@ const remainingText = props.title.substring(3) // Sisa teks
     </UContainer>
   </div>
 </template>
-s

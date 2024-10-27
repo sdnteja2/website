@@ -18,11 +18,11 @@ const kegiatans = computed(() => _kegiatan.value || [])
   <UContainer v-if="kegiatans?.length" class="py-4 md:py-8">
     <div class="  mx-auto ">
       <!-- Title -->
-      <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="headline block text-4xl sm:text-5xl  font-black leading-tight">
+      <div v-motion-fade-visible class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+        <h1 class="headline block text-4xl sm:text-5xl  font-black leading-tight">
           Galeri  SDN Teja II
         </h1>
-        <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="-mt-4 subheadline">
+        <h2 class="-mt-4 subheadline">
           Galeri kegiatan SDN Teja II
         </h2>
       </div>
