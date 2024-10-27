@@ -32,7 +32,7 @@ const links = [
 </script>
 
 <template>
-  <div class="w-full fixed top-0 z-50 bg-merah-600/90 dark:bg-merah-900/85 backdrop-blur">
+  <div class="w-full fixed top-0 z-50 bg-merah-700/90 dark:bg-merah-900/85 backdrop-blur">
     <UContainer class="flex h-14 md:h-16 justify-between items-center">
       <div>
         <NuxtLink to="/">
@@ -49,11 +49,11 @@ const links = [
         <div class="flex items-center">
           <UHorizontalNavigation
             :ui="{
-              active: 'text-gelap dark:text-kuning font-semibold relative after:bg-gelap dark:after:bg-kuning after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:rounded-full after:transform after:scale-x-100 after:origin-left after:transition-transform after:duration-300 after:ease-in-out',
+              active: 'text-kuning dark:text-kuning font-semibold relative after:bg-kuning dark:after:bg-kuning after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:rounded-full after:transform after:scale-x-100 after:origin-left after:transition-transform after:duration-300 after:ease-in-out',
               inactive: 'text-gray-50 dark:text-gray-500 relative after:bg-transparent after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:rounded-full after:transform after:scale-x-0 after:origin-left after:transition-transform after:duration-300 after:ease-in-out',
               icon: {
                 base: 'flex-shrink-0 w-5 h-5 relative',
-                active: 'text-gelap dark:text-kuning',
+                active: 'text-kuning dark:text-kuning',
                 inactive: 'text-white dark:text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-200',
               },
             }"

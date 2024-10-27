@@ -34,7 +34,7 @@ const schoolInfo = [
 
 // Paginate Settings
 const page = ref(1)
-const pageCount = 3
+const pageCount = 5
 const rows = computed(() => {
   const start = (page.value - 1) * pageCount
   const end = page.value * pageCount

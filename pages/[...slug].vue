@@ -1,13 +1,14 @@
 <script setup lang="ts">
-// import { SpeedInsights } from '@vercel/speed-insights/vue'
+import { SpeedInsights } from '@vercel/speed-insights/vue'
 </script>
 
 <template>
-  <!-- <SpeedInsights /> -->
+  <SpeedInsights />
   <div>
     <NavBar />
     <NuxtLayout>
       <ContentDoc />
     </NuxtLayout>
+    <Footer />
   </div>
 </template>

@@ -59,6 +59,6 @@ defineOgImageComponent('OgImage', {
         </UCard>
       </div>
     </UContainer>
-    <Footer />
+    >
   </div>
 </template>

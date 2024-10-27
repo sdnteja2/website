@@ -28,7 +28,7 @@ const kegiatans = computed(() => _kegiatan.value || [])
       </div>
 
       <div class="grid  md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <GaleriListItem v-for="(kegiatan, index) in kegiatans.slice(0)" :key="index" :kegiatan="kegiatan" />
+        <KegiatanListItem v-for="(kegiatan, index) in kegiatans.slice(0)" :key="index" :kegiatan="kegiatan" />
       </div>
       <!-- End Grid -->
     </div>

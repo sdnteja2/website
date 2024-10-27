@@ -18,11 +18,30 @@ const { data: _berita } = useAsyncData(
 
 // Komputasi data berita dengan pembatasan jumlah
 const beritas = computed(() => (_berita.value || []).slice(0, 10)) // Tampilkan 10 data pertama
+
+const beritaTerkait = [
+  {
+    url: 'https://www.kemdikbud.go.id/main/blog/category/berita',
+    title: 'Kemdikbud',
+    icon: '/img/logo/tutwuri.png',
+  },
+  {
+    url: 'https://disdik.jabarprov.go.id/informasi/berita',
+    title: 'Disdik Jabar',
+    icon: '/img/logo/logo-disdik-jabar.png',
+  },
+  {
+    url: 'https://disdik.majalengkakab.go.id/artikel/semua',
+    title: 'Disdik Majalengka',
+    icon: '/img/logo/logo-disdik-mjl.png',
+  },
+
+]
 </script>
 
 <template>
   <UContainer v-if="beritas?.length" class="py-4 md:py-8">
-    <div class="max-w-3xl  mx-auto ">
+    <div class="max-w-4xl  mx-auto ">
       <!-- List -->
 
       <!-- End List -->
@@ -32,8 +51,46 @@ const beritas = computed(() => (_berita.value || []).slice(0, 10)) // Tampilkan 
           Berita  SDN Teja II
         </h1>
         <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="-mt-4 subheadline">
-          Berita yang di publikasikan oleh SDN Teja II
+          Berita yang di publikasikan oleh SDN Teja II & Dinas Terkait
         </h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 items-center my-6 gap-6">
+        <NuxtLink
+          v-for="berita in beritaTerkait" :key="berita.title"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          :to="berita.url"
+          class="h-full"
+          target="_blank"
+        >
+          <UCard
+            :ui="{
+              body: {
+                base: '',
+                background: '',
+                padding: 'px-4 py-4 sm:p-4',
+              },
+            }"
+            class="hover:ring-2 h-full hover:ring-merah dark:hover:ring-merah-400"
+          >
+            <div>
+              <NuxtImg
+                :src="berita.icon"
+                class="w-auto h-12  "
+                alt="icon"
+                format="webp"
+              />
+              <div class="bg-gradient-to-r from-merah-200 via-merah-50 to-transparent h-0.5 mt-2 dark:from-kuning-500 dark:via-kuning-200">
+                <div class="bg-merah-400 w-9 h-0.5 dark:bg-kuning-600" />
+              </div>
+              <div class="mt-2">
+                <h3 class="font-semibold ">
+                  {{ berita.title }}
+                </h3>
+              </div>
+            </div>
+          </UCard>
+        </NuxtLink>
       </div>
       <ul class="space-y-10">
         <div class="featured">
