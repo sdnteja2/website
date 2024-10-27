@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxtjs/cloudinary',
     '@nuxthq/studio',
+    '@nuxt/scripts',
   ],
   ui: {
     global: true,
@@ -42,8 +43,26 @@ export default defineNuxtConfig({
     defaultLocale: 'id', // not needed if you have @nuxtjs/i18n installed
     themeColor: '#F22727',
   },
+  scripts: {
+    registry: {
+      // loads the script
+      googleAnalytics: true,
+      googleTagManager: true,
+    },
+  },
+  runtimeConfig: {
+    public: {
+      scripts: {
+        googleAnalytics: {
+          id: process.env.GOOGLE_ANALYTICS_ID,
+        },
+        googleTagManager: {
+          id: process.env.GOOGLE_TAG_MANAGER_ID,
+        },
+      },
+    },
+  },
   cloudinary: {
-
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     apiKey: process.env.CLOUDINARY_API_KEY,
   },
@@ -81,12 +100,55 @@ export default defineNuxtConfig({
       url: 'https://github.com/sdnteja2/website',
     },
   },
+  nitro: {
+    prerender: {
+      failOnError: false,
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/guru',
+        '/berita',
+        '/artikel',
+        '/media',
+        '/kegiatan',
+      ],
+    },
+  },
+  routeRules: {
+    '/': { prerender: true },
+    '/guru/**': { isr: true, prerender: true },
+    '/berita/**': { isr: true, prerender: true },
+    '/artikel/**': { isr: true, prerender: true },
+    '/guru': { isr: true, prerender: true },
+    '/berita': { isr: true, prerender: true },
+    '/artikel': { isr: true, prerender: true },
+    '/media': { ssr: false },
+    '/kegiatan': { isr: true, prerender: true },
+
+    // '/articles/**': { isr: true, prerender: true },
+    // '/gallery/**': { isr: true, prerender: true },
+    // '/projects/**': { isr: true, prerender: true },
+    // '/en/articles/**': { isr: true, prerender: true },
+    // '/en/gallery/**': { isr: true, prerender: true },
+    // '/en/projects/**': { isr: true, prerender: true },
+    // '/artikel/**': { isr: true, prerender: true },
+    // '/galeri/**': { isr: true, prerender: true },
+    // '/projek/**': { isr: true, prerender: true },
+  },
+  // hooks: {
+  //   'components:extend': function (components) {
+  //     for (const comp of components) {
+  //       if (comp.global)
+  //         comp.global = 'sync'
+  //     }
+  //   },
+  // },
   // routeRules: {
   //   // Home pre-rendered at build time
   //   '/': { prerender: true },
 
   //   // Guru page cached with stale-while-revalidate (background revalidation)
-  //   '/guru': { swr: true, prerender: true },
+  //   '/guru': { isr: true, prerender: true },
 
   //   // Berita page generated on demand, cached in CDN for 1 hour
   //   '/berita': { isr: 3600 },
