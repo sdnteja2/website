@@ -67,12 +67,18 @@ function extractTextFromMarkdown(children: any[]): string {
 }
 
 function onSelect(option: any) {
-  if (option.click)
+  if (!option)
+    return // Pastikan hanya mengeksekusi jika option ada
+
+  if (option.click) {
     option.click()
-  else if (option.to)
+  }
+  else if (option.to) {
     router.push(option.to)
-  else if (option.href)
+  }
+  else if (option.href) {
     window.open(option.href, '_blank')
+  }
 }
 </script>
 
@@ -88,7 +94,7 @@ function onSelect(option: any) {
 
           aria-label="Buka pencarian"
           icon="i-ph-magnifying-glass-duotone"
-          color="gray"
+          color="kuning"
           variant="ghost"
           @click="isOpen = true"
         />
@@ -96,7 +102,6 @@ function onSelect(option: any) {
     </UTooltip>
     <UModal
       v-model="isOpen"
-
       :ui="{
         container: 'flex overflow-y-hidden min-h-full items-start sm:items-start justify-center text-center',
         margin: 'sm:my-8',
@@ -126,7 +131,7 @@ function onSelect(option: any) {
           resultLimit: 10,
         }"
         @update:model-value="onSelect"
-        @click="isOpen = false"
+        @close="isOpen = false"
       />
     </UModal>
   </div>

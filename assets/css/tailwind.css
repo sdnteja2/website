@@ -34,7 +34,7 @@
 
 @layer base {
   html {
-    @apply text-[18px]  scroll-smooth;
+    @apply text-[17px]  scroll-smooth;
   }
   body {
     @apply font-body bg-slate-50 dark:bg-merah-950 text-merah-900  dark:text-slate-300;

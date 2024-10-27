@@ -38,10 +38,13 @@ const id = computed(() => {
     v-if="media._path && media.title" data-aos="fade-up"
     data-aos-anchor-placement="top-bottom"
     :data-content-id="id"
-    class="h-full"
+    class="h-full x"
   >
     <UCard
       :ui="{
+        body: {
+          padding: 'px-2 py-2 sm:px-4',
+        },
         footer: {
           padding: 'px-2 py-2 sm:px-4',
         },
@@ -49,23 +52,23 @@ const id = computed(() => {
           padding: 'px-2 py-2 sm:px-4',
         },
       }"
-      class="h-full"
+      class="h-full z-20"
     >
       <lite-youtube
         :videoid="media.video"
         :playlabel="media.title"
         params="controls=2&start=10&end=30&modestbranding=2&rel=0&enablejsapi=1"
       />
-      <h2 class="capitalize">
+      <h3 class="font-body font-medium mt-2 ">
         {{ media.title }}
-      </h2>
+      </h3>
       <template #footer>
         <div>
           <NuxtLink
             target="_blank"
             rel="nofollow"
             :title="media.title"
-
+            class="text-sm underline"
             :to="media.url"
           >
             Sumber: {{ media.sumber }}
