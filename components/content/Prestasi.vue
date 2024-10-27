@@ -1,23 +1,38 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+interface Prestasi {
+  tahun: string
+  lomba: string
+  peringkat: string
+  siswa: string
+}
 
-const columns = [
-  { key: 'tahun', label: 'Tahun', sortable: true, direction: 'desc' as const },
-  { key: 'lomba', label: 'Lomba', sortable: true },
-  { key: 'peringkat', label: 'Peringkat' },
-  { key: 'siswa', label: 'Siswa' },
-]
+const props = defineProps({
+  dataPrestasi: {
+    type: Array as () => Prestasi[],
+    default: () => ([
+      { tahun: '2024', lomba: 'OSN Matematika', peringkat: '1', siswa: 'Farhan Muhaemin A.' },
+    ]),
+  },
+})
 
-const prestasi = [
-  { tahun: '2024', lomba: 'OSN Matematika', peringkat: '1', siswa: 'Farhan Muhaemin A.' },
-  { tahun: '2024', lomba: 'Siswa Berprestasi', peringkat: '3', siswa: 'Sindi Dewi N.' },
-  { tahun: '2023', lomba: 'Voli', peringkat: '1', siswa: 'Tim Bola Voli Putra' },
-  { tahun: '2023', lomba: 'Voli', peringkat: '1', siswa: 'Tim Bola Voli Putra' },
-  { tahun: '2023', lomba: 'Voli', peringkat: '1', siswa: 'Tim Bola Voli Putra' },
-  { tahun: '2023', lomba: 'Voli', peringkat: '1', siswa: 'Tim Bola Voli Putra' },
-  { tahun: '2023', lomba: 'Voli', peringkat: '1', siswa: 'Tim Bola Voli Putra' },
-  { tahun: '2023', lomba: 'Voli', peringkat: '1', siswa: 'Tim Bola Voli Putra' },
-]
+const columns = [{
+  key: 'tahun',
+  label: 'Tahun',
+  sortable: true,
+  direction: 'desc' as const,
+}, {
+  key: 'lomba',
+  label: 'Lomba',
+
+}, {
+  key: 'peringkat',
+  label: 'Peringkat',
+  sortable: true,
+}, {
+  key: 'siswa',
+  label: 'Siswa',
+
+}]
 
 const schoolInfo = [
   { label: 'Nama Sekolah', value: 'SDN Teja II' },
@@ -38,7 +53,7 @@ const pageCount = 5
 const rows = computed(() => {
   const start = (page.value - 1) * pageCount
   const end = page.value * pageCount
-  return prestasi.slice(start, end)
+  return props.dataPrestasi.slice(start, end)
 })
 </script>
 
@@ -62,7 +77,7 @@ const rows = computed(() => {
       />
       <!-- Kontrol Paginasi -->
       <div class="flex justify-end px-3 py-3.5 border-t border-gray-200 dark:border-gray-700">
-        <UPagination v-model="page" :page-count="pageCount" :total="prestasi.length" />
+        <UPagination v-model="page" :page-count="pageCount" :total="dataPrestasi.length" />
       </div>
     </UCard>
 

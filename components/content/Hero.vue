@@ -41,7 +41,7 @@ const remainingText = props.title.substring(3) // Sisa teks
           <div class="flex justify-center lg:justify-end">
             <CldImage
               v-motion-fade-visible
-              src="https://res.cloudinary.com/dyy24w5kl/image/upload/v1729926403/image/fotobersama_3x_mbgo9l.jpg"
+              :src="props.image"
               width="1600"
               height="900"
               alt="My Awesome Image"
