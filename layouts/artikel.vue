@@ -122,12 +122,12 @@ defineOgImageComponent('OgImage', {
             <div class="flex items-center gap-x-1.5">
               <UPopover :popper="{ arrow: true }" overlay>
                 <UTooltip text="Daftar Isi">
-                  <UButton size="xs" square color="white" trailing-icon="i-basil-document-outline" />
+                  <UButton size="xs" square color="white" trailing-icon="i-hugeicons-left-to-right-list-dash" />
                 </UTooltip>
                 <template #panel="{ close }">
                   <div class="p-3  w-80  ">
                     <h3>Daftar Isi</h3>
-                    <div v-for="link of page.body.toc.links" :key="link.id" class="flex flex-col  " :class="{ 'ml-1': link.depth === 3 }">
+                    <div v-for="link of page.body?.toc?.links" :key="link.id" class="flex flex-col  " :class="{ 'ml-1': link.depth === 3 }">
                       <a
                         class="text-sm my-1 px-2 p-1 line-clamp-1 ring-1 rounded-md ring-gray-200 hover:ring-gray-400 dark:hover:ring-gray-600  dark:ring-gray-800 text-left" :href="`#${link.id}`" :class="[activeHeadings.includes(link.id) ? 'text-primary-500 dark:text-primary-400' : 'hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300']"
                         @click.prevent="scrollToHeading(link.id)" @click="close"
@@ -140,7 +140,7 @@ defineOgImageComponent('OgImage', {
               <div class="hs-tooltip inline-block">
                 <UPopover :popper="{ arrow: true }" overlay>
                   <UTooltip text="Bagikan Artikel">
-                    <UButton size="xs" color="white" trailing-icon="i-basil-share-box-solid" />
+                    <UButton size="xs" color="white" trailing-icon="i-hugeicons-share-01" />
                   </UTooltip>
                   <template #panel>
                     <div class="p-3 flex flex-row space-x-2">
@@ -226,6 +226,5 @@ defineOgImageComponent('OgImage', {
         </div>
       </div>
     </UContainer>
-    <Footer />
   </div>
 </template>

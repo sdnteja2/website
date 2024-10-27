@@ -12,6 +12,8 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@iconify-json/hugeicons": "^1.2.1",
+    "@iconify-json/ph": "^1.2.1",
     "@nuxtjs/cloudinary": "^3.1.1",
     "aos": "^2.3.4",
     "nuxt": "^3.13.2",

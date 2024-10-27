@@ -79,8 +79,9 @@ const mediaTerkait = [
       <!-- link terkai media -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 items-center gap-6">
         <NuxtLink
-          v-for="media in mediaTerkait"
-          :key="media.title"
+          v-for="media in mediaTerkait" :key="media.title"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
           :to="media.url"
           class="h-full"
           target="_blank"
@@ -118,7 +119,7 @@ const mediaTerkait = [
         </NuxtLink>
       </div>
       <!-- Filter Kelas -->
-      <UDivider class="my-4" />
+      <UDivider data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="my-4" />
       <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class=" mt-8 subheadline">
         Kumpulan video pembelajaran pilihan dari platform Youtube
       </h2>
