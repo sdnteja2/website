@@ -1,33 +1,26 @@
-<script setup>
-import { defineProps, onMounted, ref } from 'vue'
+<script setup lang="ts">
+interface SelayangPandang {
+  nama: string
+  jabatan: string
+  foto: string
+  ucapan: string
+}
 
-defineProps({
-  nama: {
-    type: String,
-    default: 'Yusup, S.Pd.',
+const props = defineProps({
+  selayangPandang: {
+    type: Object as () => SelayangPandang,
+    default: () => ({
+      nama: 'Yusup, S.Pd.',
+      jabatan: 'Kepala Sekolah',
+      foto: 'https://res.cloudinary.com/dyy24w5kl/image/upload/v1729924575/guru/1yusupsquare.jpg',
+      ucapan: 'Kehadiran website sekolah ini merupakan salah satu upaya kita untuk meningkatkan layanan informasi dan komunikasi sekolah kepada seluruh stakeholders, termasuk siswa, guru, karyawan, orang tua siswa, alumni, dan masyarakat umum.',
+    }),
   },
-  jabatan: {
-    type: String,
-    default: 'Kepala Sekolah',
-  },
-  ucapan: {
-    type: String,
-    default: 'Kehadiran website sekolah ini merupakan salah satu upaya kita untuk meningkatkan layanan informasi dan komunikasi sekolah kepada seluruh stakeholders, termasuk siswa, guru, karyawan, orang tua siswa, alumni, dan masyarakat umum.',
-  },
-  foto: {
-    type: String,
-    default: 'guru/1yusupsquare.jpg',
+  fasilitas: {
+    type: Array as () => { src: string, label: string }[],
+    default: () => ([]),
   },
 })
-
-// Array items dengan URL gambar dan label
-const items = [
-  { src: 'https://a.storyblok.com/f/255043/1416x1062/14a8939cf4/whatsapp-image-2024-02-27-at-16-14-10.jpeg', label: 'Perpustakaan' },
-  { src: 'https://a.storyblok.com/f/255043/1416x1062/f4cfe8d8f4/whatsapp-image-2024-02-27-at-16-14-10-1.jpeg', label: 'WC' },
-  { src: 'https://a.storyblok.com/f/255043/1280x959/e6eab3e2d6/whatsapp-image-2024-02-27-at-16-14-08.jpeg', label: 'Lab Komputer' },
-  { src: 'https://a.storyblok.com/f/255043/1280x959/a99d791feb/whatsapp-image-2024-02-27-at-16-14-07-1.jpeg', label: 'Ruang Guru' },
-  { src: 'https://a.storyblok.com/f/255043/1280x959/350c22b6c0/whatsapp-image-2024-02-27-at-16-14-03-1.jpeg', label: 'Kantin' },
-]
 
 const carouselRef = ref()
 
@@ -50,19 +43,18 @@ onMounted(() => {
   <div>
     <!-- Testimonials -->
     <UContainer class="px-4 py-10 sm:px-16 lg:py-14 mx-auto">
-      <!-- Grid -->
-      <div class="grid grid-cols-1 h-full  gap-6 md:grid-cols-2 md:justify-center md:items-center">
+      <div class="grid grid-cols-1 h-full gap-6 md:grid-cols-2 md:justify-center md:items-center">
         <!-- Card untuk Foto dan Deskripsi -->
         <UCard v-motion-fade-visible class="h-full">
           <template #header>
-            <h2 class="subheadline ">
+            <h2 class="subheadline">
               Selayang Pandang
             </h2>
           </template>
           <div class="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8">
             <div class="h-40 w-40">
               <CldImage
-                :src="foto"
+                :src="props.selayangPandang.foto"
                 width="500"
                 height="500"
                 alt="My Awesome Image"
@@ -70,11 +62,11 @@ onMounted(() => {
               />
             </div>
             <blockquote class="max-w-lg italic font-medium text-center">
-              {{ ucapan }}
+              {{ props.selayangPandang.ucapan }}
             </blockquote>
             <div class="text-center">
-              <h2>{{ nama }}</h2>
-              <p>{{ jabatan }}</p>
+              <h2>{{ props.selayangPandang.nama }}</h2>
+              <p>{{ props.selayangPandang.jabatan }}</p>
             </div>
           </div>
         </UCard>
@@ -82,7 +74,7 @@ onMounted(() => {
         <!-- Card untuk Carousel -->
         <UCard v-motion-fade-visible class="h-full">
           <template #header>
-            <h2 class="subheadline ">
+            <h2 class="subheadline">
               Fasilitas
             </h2>
           </template>
@@ -90,29 +82,27 @@ onMounted(() => {
             <UCarousel
               ref="carouselRef"
               v-slot="{ item }"
-              :items="items"
-              :ui="{ item: 'w-full',
-                     indicators: {
-                       wrapper: 'relative bottom-0 mt-4',
-                     },
-                     container: 'rounded-lg' }"
-
+              :items="props.fasilitas"
+              :ui="{
+                item: 'w-full',
+                indicators: { wrapper: 'relative bottom-0 mt-4' },
+                container: 'rounded-lg',
+              }"
               class="rounded-lg overflow-hidden"
-              arrows="true"
-              indicators="true"
+              arrows
+              indicators
             >
               <div class="flex flex-col">
-                <NuxtImg
+                <CldImage
                   :src="item.src"
                   :alt="item.label"
                   class="w-full object-cover rounded-md"
                   draggable="false"
-                  height="480"
-                  width="720"
+                  height="900"
+                  width="1600"
                   loading="lazy"
                   title="fasilitas"
                 />
-                <!-- Label untuk Gambar -->
                 <div class="text-center mt-2 text-sm font-semibold">
                   {{ item.label }}
                 </div>
@@ -121,8 +111,6 @@ onMounted(() => {
           </div>
         </UCard>
       </div>
-      <!-- End Grid -->
     </UContainer>
-    <!-- End Testimonials -->
   </div>
 </template>
