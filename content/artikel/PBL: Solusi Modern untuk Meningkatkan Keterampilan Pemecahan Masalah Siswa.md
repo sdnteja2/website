@@ -20,7 +20,7 @@ Konsep PBL telah ada sejak lama, namun istilah "problem-based learning" mulai po
 - **Barrows**: Seorang ahli pendidikan medis yang mengembangkan PBL di bidang kedokteran.
 - **Schmidt**: Seorang psikolog kognitif yang memberikan kontribusi signifikan dalam pengembangan teori PBL.
 
-![anbk](https://res.cloudinary.com/dyy24w5kl/image/upload/v1730128808/artikel/DALL_E_2024-10-28_22.17.51_-_Create_a_detailed_illustration_for_an_educational_article_about_Problem-Based_Learning_PBL_._The_scene_features_a_diverse_classroom_where_students_wo_uge750.webp){height="900" width="1600"}
+![PBL](https://res.cloudinary.com/dyy24w5kl/image/upload/v1730128808/artikel/DALL_E_2024-10-28_22.17.51_-_Create_a_detailed_illustration_for_an_educational_article_about_Problem-Based_Learning_PBL_._The_scene_features_a_diverse_classroom_where_students_wo_uge750.webp){height="900" width="1600"}
 
 ## Tujuan PBL
 
@@ -49,7 +49,7 @@ Meskipun memiliki banyak kelebihan, PBL juga memiliki beberapa kelemahan, antara
 
 ## Sintak PBL
 
-![anbk](https://res.cloudinary.com/dyy24w5kl/image/upload/v1730128804/artikel/DALL_E_2024-10-28_22.18.06_-_Illustrate_a_modern_classroom_setup_designed_for_Problem-Based_Learning_PBL_._In_the_scene_small_groups_of_students_are_engaged_in_discussions_anal_gaekou.webp){height="900" width="1600"}
+![PBL](https://res.cloudinary.com/dyy24w5kl/image/upload/v1730128804/artikel/DALL_E_2024-10-28_22.18.06_-_Illustrate_a_modern_classroom_setup_designed_for_Problem-Based_Learning_PBL_._In_the_scene_small_groups_of_students_are_engaged_in_discussions_anal_gaekou.webp){height="900" width="1600"}
 
 Secara umum, sintak PBL terdiri dari beberapa tahap, yaitu:
 
