@@ -30,7 +30,7 @@ const props = defineProps({
 const id = computed(() => {
   return (process.dev || useContentPreview()?.isEnabled()) ? props.article?._id : undefined
 })
-const isLoaded = ref(false)
+// const isLoaded = ref(false)
 </script>
 
 <template>
@@ -60,7 +60,7 @@ const isLoaded = ref(false)
       >
         <div class="aspect-w-16 aspect-h-9">
           <CldImage
-            v-show="isLoaded"
+
             class="w-full object-cover rounded-lg"
             :src="article.image"
             :alt="article.title"
@@ -69,12 +69,6 @@ const isLoaded = ref(false)
             height="500"
             width="500"
             :placeholder="[50, 25, 75, 5]"
-            @load="isLoaded = true"
-          />
-          <USkeleton
-            v-show="!isLoaded"
-            class="w-full h-48 rounded"
-            :ui="{ rounded: 'rounded' }"
           />
         </div>
         <div class="w-full  justify-end flex my-4">
