@@ -18,7 +18,7 @@ const title = computed(() => {
 
 const description = computed(() => {
   const text = props.description || ''
-  return text.length > 200 ? `${text.slice(0, 200)}...` : text
+  return text.length > 150 ? `${text.slice(0, 150)}...` : text
 })
 </script>
 
