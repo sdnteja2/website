@@ -62,7 +62,7 @@ defineOgImageComponent('OgImage', {
           divider=">"
           :links="[{ label: 'Home', to: '/' }, { label: 'Artikel', to: '/artikel' }]"
         />
-        <UCard class="ring-1 ring-gray-200 hover:ring-gray-200 dark:hover:ring-gray-800   dark:ring-gray-800  p-2  sm:p-3 bg-white dark:bg-gray-900">
+        <UCard class="ring-1 ring-gray-200 hover:ring-gray-200 dark:hover:ring-gray-800   dark:ring-gray-800  p-2  sm:p-3 bg-white dark:bg-gelap-900">
           <template #header>
             <div class="flex justify-between text-sm">
               <p v-if="page?.author">
@@ -74,7 +74,7 @@ defineOgImageComponent('OgImage', {
               </time>
             </div>
           </template>
-          <h1 class="font-bold font-body leading-tight title text-left">
+          <h1 class="font-bold text-balance leading-tight subheadline text-left">
             {{ page.title }}
           </h1>
           <div class="aspect-w-16 aspect-h-9">
@@ -90,7 +90,7 @@ defineOgImageComponent('OgImage', {
               :placeholder="[50, 25, 75, 5]"
             />
           </div>
-          <p>
+          <p class="text-balance mt-2">
             {{ page.description }}
           </p>
           <template #footer>
@@ -110,8 +110,8 @@ defineOgImageComponent('OgImage', {
           </template>
         </UCard>
         <!-- konten -->
-        <UCard class="my-4 ring-gray-200 dark:ring-gray-800  flex-1 flex flex-col shadow hover:ring-gray-200 dark:hover:ring-ring-gray-800">
-          <div class="prose mx-auto prose-merah prose-img:mx-auto prose-img:w-full prose-sm sm:prose-base  dark:prose-invert">
+        <UCard class="my-4  dark:bg-gelap-900 ring-gray-200 dark:ring-gray-800  flex-1 flex flex-col shadow hover:ring-gray-200 dark:hover:ring-ring-gray-800">
+          <div class="prose mx-auto prose-gelap prose-img:mx-auto prose-img:rounded-md prose-img:w-full prose-sm sm:prose-base  dark:prose-invert">
             <slot />
           </div>
         </UCard>
@@ -129,7 +129,7 @@ defineOgImageComponent('OgImage', {
                     <h3>Daftar Isi</h3>
                     <div v-for="link of page.body?.toc?.links" :key="link.id" class="flex flex-col  " :class="{ 'ml-1': link.depth === 3 }">
                       <a
-                        class="text-sm my-1 px-2 p-1 line-clamp-1 ring-1 rounded-md ring-gray-200 hover:ring-gray-400 dark:hover:ring-gray-600  dark:ring-gray-800 text-left" :href="`#${link.id}`" :class="[activeHeadings.includes(link.id) ? 'text-primary-500 dark:text-primary-400' : 'hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300']"
+                        class="text-sm my-1 px-2 p-1 line-clamp-1 ring-1 rounded-md ring-gray-200 hover:ring-gray-400 dark:hover:ring-gray-600  dark:ring-gray-800 text-left" :href="`#${link.id}`" :class="[activeHeadings.includes(link.id) ? 'text-white bg-merah  ' : 'hover:text-kuning  ']"
                         @click.prevent="scrollToHeading(link.id)" @click="close"
                       >{{ link.text }}</a>
                     </div>

@@ -11,8 +11,15 @@ const props = withDefaults(defineProps<{ title?: string, description?: string, h
 
 })
 
-const title = computed(() => (props.title || '').slice(0, 60))
-const description = computed(() => (props.description || '').slice(0, 200))
+const title = computed(() => {
+  const text = props.title || ''
+  return text.length > 60 ? `${text.slice(0, 60)}...` : text
+})
+
+const description = computed(() => {
+  const text = props.description || ''
+  return text.length > 200 ? `${text.slice(0, 200)}...` : text
+})
 </script>
 
 <template>
@@ -46,7 +53,7 @@ const description = computed(() => (props.description || '').slice(0, 200))
       <p v-if="headline" class="uppercase text-[24px] text-kuning mb-4 font-semibold">
         SDN TEJA II
       </p>
-      <h1 v-if="title" class="w-[600px] m-0 text-[75px] font-semibold mb-4 text-merah-300 flex items-center">
+      <h1 v-if="title" class="w-[600px] m-0 text-[40px] font-semibold mb-4 text-merah-300 flex items-center">
         <span>{{ title }}</span>
       </h1>
       <p v-if="description" class="text-[32px] text-[#E4E4E7] leading-tight">

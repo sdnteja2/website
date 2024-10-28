@@ -30,12 +30,13 @@ const props = defineProps({
 const id = computed(() => {
   return (process.dev || useContentPreview()?.isEnabled()) ? props.article?._id : undefined
 })
+const isLoaded = ref(false)
 </script>
 
 <template>
   <article
-    v-if="article._path && article.title" data-aos="fade-up"
-    data-aos-anchor-placement="top-bottom"
+    v-if="article._path && article.title"
+
     :data-content-id="id"
     class="h-full"
   >
@@ -58,7 +59,8 @@ const id = computed(() => {
         :title="article.title"
       >
         <div class="aspect-w-16 aspect-h-9">
-          <NuxtImg
+          <CldImage
+            v-show="isLoaded"
             class="w-full object-cover rounded-lg"
             :src="article.image"
             :alt="article.title"
@@ -67,6 +69,12 @@ const id = computed(() => {
             height="500"
             width="500"
             :placeholder="[50, 25, 75, 5]"
+            @load="isLoaded = true"
+          />
+          <USkeleton
+            v-show="!isLoaded"
+            class="w-full h-48 rounded"
+            :ui="{ rounded: 'rounded' }"
           />
         </div>
         <div class="w-full  justify-end flex my-4">
