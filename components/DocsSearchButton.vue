@@ -96,6 +96,7 @@ function onSelect(option: any) {
           icon="i-ph-magnifying-glass-duotone"
           color="kuning"
           variant="ghost"
+          class="text-kuning-200 dark:text-white"
           @click="isOpen = true"
         />
       </div>

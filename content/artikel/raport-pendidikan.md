@@ -1,14 +1,13 @@
 ---
-title: 'Pendidikan Guru Penggerak: Membangun Fondasi Masa Depan Bangsa Melalui Pendidikan Berkualitas'
-date: '2023-12-31T00:00:00.000Z'
-description: Artikel ini membahas peran penting guru penggerak dalam sistem pendidikan dan bagaimana pendidikan mereka yang mendalam dapat membantu membangun masa depan yang lebih cerah bagi generasi muda.
+title: 'Rapor Pendidikan: Pengertian, Fungsi, dan Manfaat dalam Peningkatan Mutu Sekolah'
+date: '2024-08-28'
+description: Rapor pendidikan adalah salah satu instrumen evaluasi bagi sekolah dan pemerintah dalam memantau perkembangan dan mutu pendidikan di berbagai jenjang.
 image: https://res.cloudinary.com/dyy24w5kl/image/upload/v1730100651/artikel/BUeNWYemFS_v3ynrq.png
 layout: artikel
 icon: i-ph-note-duotone
 tags:
-  - pendidikan
+  - raport mutu
   - guru
-  - abad 21
   - raport pendidikan
 ---
 

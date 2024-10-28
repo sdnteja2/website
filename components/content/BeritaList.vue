@@ -23,17 +23,17 @@ const beritaTerkait = [
   {
     url: 'https://www.kemdikbud.go.id/main/blog/category/berita',
     title: 'Kemdikbud',
-    icon: '/img/logo/tutwuri.png',
+    icon: 'https://res.cloudinary.com/dyy24w5kl/image/upload/v1730119603/logo/tutwuri_fdqfmn.png',
   },
   {
     url: 'https://disdik.jabarprov.go.id/informasi/berita',
     title: 'Disdik Jabar',
-    icon: '/img/logo/logo-disdik-jabar.png',
+    icon: 'https://res.cloudinary.com/dyy24w5kl/image/upload/v1730119602/logo/logo-disdik-jabar_wqzwwa.png',
   },
   {
     url: 'https://disdik.majalengkakab.go.id/artikel/semua',
     title: 'Disdik Majalengka',
-    icon: '/img/logo/logo-disdik-mjl.png',
+    icon: 'https://res.cloudinary.com/dyy24w5kl/image/upload/v1730119602/logo/logo-disdik-mjl_qjnalj.png',
   },
 
 ]
@@ -77,8 +77,9 @@ const beritaTerkait = [
             <div>
               <NuxtImg
                 :src="berita.icon"
-                class="w-auto h-12 bg-merah-200 p-1 dark:bg-merah-800 rounded-md "
+                class="w-auto object-fill  h-12 bg-merah-500 p-1 dark:bg-merah-800 rounded-md "
                 alt="icon"
+                height="48"
                 format="webp"
               />
               <div class="bg-gradient-to-r from-merah-200 via-merah-50 to-transparent h-0.5 mt-2 dark:from-kuning-500 dark:via-kuning-200">
