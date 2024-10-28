@@ -1,6 +1,6 @@
 ---
 title: 'PBL: Solusi Modern untuk Meningkatkan Keterampilan Pemecahan Masalah Siswa'
-date: '2024-08-28'
+date: 2024-10-
 description: Ingin tahu bagaimana cara membuat pembelajaran lebih menarik dan bermakna? Pelajari Problem Based Learning (PBL) secara mendalam. Artikel ini membahas konsep, sejarah, tujuan, hingga langkah-langkah penerapan PBL di kelas.
 image: https://res.cloudinary.com/dyy24w5kl/image/upload/v1730128809/artikel/DALL_E_2024-10-28_22.19.33_-_Create_an_illustration_of_an_Indonesian_elementary_school_classroom_designed_for_Problem-Based_Learning_PBL_._In_this_scene_young_Indonesian_student_ajxhde.webp
 layout: artikel
@@ -23,6 +23,7 @@ Konsep PBL telah ada sejak lama, namun istilah "problem-based learning" mulai po
 ![anbk](https://res.cloudinary.com/dyy24w5kl/image/upload/v1730128808/artikel/DALL_E_2024-10-28_22.17.51_-_Create_a_detailed_illustration_for_an_educational_article_about_Problem-Based_Learning_PBL_._The_scene_features_a_diverse_classroom_where_students_wo_uge750.webp){height="900" width="1600"}
 
 ## Tujuan PBL
+
 Tujuan utama PBL adalah untuk:
 
 - Meningkatkan kemampuan berpikir kritis dan pemecahan masalah: Siswa dilatih untuk menganalisis masalah, mencari informasi, dan merumuskan solusi.
@@ -53,13 +54,13 @@ Meskipun memiliki banyak kelebihan, PBL juga memiliki beberapa kelemahan, antara
 Secara umum, sintak PBL terdiri dari beberapa tahap, yaitu:
 
 1. Orientasi pada masalah: Guru memperkenalkan masalah kepada siswa.
-Organisasi untuk belajar: Siswa dibagi menjadi kelompok dan merencanakan strategi pemecahan masalah.
+   Organisasi untuk belajar: Siswa dibagi menjadi kelompok dan merencanakan strategi pemecahan masalah.
 2. Penyelidikan individu dan kelompok: Siswa mencari informasi dan menganalisis masalah.
 3. Pembacaan, analisis, dan sintesis informasi: Siswa menyusun informasi yang diperoleh dan merumuskan solusi.
 4. Persiapan presentasi: Siswa mempersiapkan presentasi untuk menyampaikan hasil kerja kelompok.
-Presentasi: Setiap kelompok mempresentasikan hasil kerja mereka.
+   Presentasi: Setiap kelompok mempresentasikan hasil kerja mereka.
 5. Analisis dan evaluasi: Guru dan siswa bersama-sama menganalisis proses pemecahan masalah dan hasil yang diperoleh.
-Langkah-langkah Penerapan PBL
+   Langkah-langkah Penerapan PBL
 
 ### Untuk menerapkan PBL di kelas, guru dapat mengikuti langkah-langkah berikut:
 

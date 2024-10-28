@@ -1,6 +1,6 @@
 ---
 title: 'Rapor Pendidikan: Pengertian, Fungsi, dan Manfaat dalam Peningkatan Mutu Sekolah'
-date: '2024-08-28'
+date: 2024-10-28T00:00:00.000Z
 description: Rapor pendidikan adalah salah satu instrumen evaluasi bagi sekolah dan pemerintah dalam memantau perkembangan dan mutu pendidikan di berbagai jenjang.
 image: https://res.cloudinary.com/dyy24w5kl/image/upload/v1730100651/artikel/BUeNWYemFS_v3ynrq.png
 layout: artikel
