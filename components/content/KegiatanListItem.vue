@@ -28,12 +28,12 @@ const id = computed(() => {
   return (process.dev || useContentPreview()?.isEnabled()) ? props.kegiatan?._id : undefined
 })
 const isOpen = ref(false)
+const isLoaded = ref(false)
 </script>
 
 <template>
   <article
-    v-if="kegiatan._path && kegiatan.title" data-aos="fade-up"
-    data-aos-anchor-placement="top-bottom"
+    v-if="kegiatan._path && kegiatan.title"
     :data-content-id="id"
   >
     <UCard
@@ -49,6 +49,7 @@ const isOpen = ref(false)
     >
       <div class="aspect-square " @click="isOpen = true">
         <NuxtImg
+          v-show="isLoaded"
           v-if="kegiatan.image"
           class=" object-cover  rounded-md"
           :src="kegiatan.image"
@@ -58,6 +59,19 @@ const isOpen = ref(false)
           width="500"
           height="500"
           :placeholder="[50, 25, 75, 5]"
+          @load="isLoaded = true"
+          @click="isOpen = true"
+        />
+        <USkeleton
+
+          v-show="!isLoaded"
+          class="w-full h-64 rounded"
+          :ui="{
+            rounded: 'rounded',
+            base: 'animate-pulse',
+            background: 'bg-primary-500 dark:bg-primmary-500',
+
+          } "
         />
       </div>
 

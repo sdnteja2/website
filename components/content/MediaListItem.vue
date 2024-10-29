@@ -55,7 +55,7 @@ const id = computed(() => {
       }"
       class="h-full z-20"
     >
-      <div>
+      <!-- <div>
         <div class="flex items-center justify-center p-5">
           <ScriptYouTubePlayer :video-id="media.video">
             <template #placeholder="{ placeholder }">
@@ -63,12 +63,12 @@ const id = computed(() => {
             </template>
           </ScriptYouTubePlayer>
         </div>
-      </div>
-      <!-- <lite-youtube
+      </div> -->
+      <lite-youtube
         :videoid="media.video"
         :playlabel="media.title"
         params="controls=2&start=10&end=30&modestbranding=2&rel=0&enablejsapi=1"
-      /> -->
+      />
       <h3 class="font-body font-medium mt-2 ">
         {{ media.title }}
       </h3>
