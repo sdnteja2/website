@@ -51,6 +51,18 @@ defineOgImageComponent('OgImage', {
   title: page.value?.title,
   description: page.value?.description || '',
 })
+
+if (page.value) {
+  useHead({
+    title: page.value.title,
+    meta: [
+      {
+        name: 'keywords',
+        content: page.value.tags?.join(', ') || 'SDN TEJA 2, TEJA, RAJAGALUH', // Default keywords jika tags kosong
+      },
+    ],
+  })
+}
 </script>
 
 <template>

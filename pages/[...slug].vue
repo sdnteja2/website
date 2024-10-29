@@ -1,24 +1,31 @@
 <script setup lang="ts">
 import { SpeedInsights } from '@vercel/speed-insights/vue'
+
+const { page } = useContent()
 // Mengimpor komponen SpeedInsights dari paket speed-insights untuk digunakan dalam template.
 // Komponen ini mungkin digunakan untuk menampilkan metrik kinerja atau analisis terkait kecepatan.
+if (page.value) {
+  useHead({
+    title: page.value.title,
+    meta: [
+      {
+        name: 'keywords',
+        content: page.value.tags?.join(', ') || 'SDN TEJA 2, TEJA, RAJAGALUH', // Default keywords jika tags kosong
+      },
+    ],
+  })
+}
 </script>
 
 <template>
-  <!-- Komponen SpeedInsights untuk menampilkan wawasan kinerja halaman. -->
-  <SpeedInsights />
-
   <div>
-    <!-- Komponen NavBar untuk menampilkan navigasi utama situs. -->
-    <NavBar />
+    <!-- Komponen SpeedInsights untuk menampilkan wawasan kinerja halaman. -->
+    <SpeedInsights />
 
-    <!-- NuxtLayout digunakan untuk menyusun tata letak halaman dengan menyertakan konten dokumen. -->
     <NuxtLayout>
-      <!-- Komponen ContentDoc untuk menampilkan konten utama dari dokumen atau halaman. -->
       <ContentDoc />
     </NuxtLayout>
 
     <!-- Komponen Footer untuk menampilkan informasi footer situs. -->
-    <Footer />
   </div>
 </template>

@@ -136,31 +136,12 @@ export default defineNuxtConfig({
     // '/galeri/**': { isr: true, prerender: true },
     // '/projek/**': { isr: true, prerender: true },
   },
-  // hooks: {
-  //   'components:extend': function (components) {
-  //     for (const comp of components) {
-  //       if (comp.global)
-  //         comp.global = 'sync'
-  //     }
-  //   },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+  },
+
+  // app: {
+  //   layoutTransition: { name: 'layout', mode: 'out-in' },
   // },
-  // routeRules: {
-  //   // Home pre-rendered at build time
-  //   '/': { prerender: true },
 
-  //   // Guru page cached with stale-while-revalidate (background revalidation)
-  //   '/guru': { isr: true, prerender: true },
-
-  //   // Berita page generated on demand, cached in CDN for 1 hour
-  //   '/berita': { isr: 3600 },
-
-  //   // Artikel page cached with swr for 1 hour
-  //   '/artikel': { swr: 3600 },
-
-  //   // Media page only rendered on client-side
-  //   '/media': { ssr: false },
-
-  //   // Kegiatan page generated on demand, cached on CDN
-  //   '/kegiatan': { isr: true },
-  // },
 })

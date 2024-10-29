@@ -50,7 +50,7 @@ const description = computed(() => {
     </svg>
 
     <div class="w-[600px] pl-[100px]">
-      <p v-if="headline" class="uppercase text-[24px] text-kuning mb-4 font-semibold">
+      <p class="uppercase text-[24px] fixed top-2 right-2 text-kuning mb-4 font-semibold">
         SDN TEJA II
       </p>
       <h1 v-if="title" class="w-[600px] m-0 text-[40px] font-semibold mb-4 text-merah-300 flex items-center">
