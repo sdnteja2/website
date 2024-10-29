@@ -107,10 +107,23 @@ const isLoaded = ref(false)
         </template>
 
         <NuxtImg
-          class=" object-cover rounded-md aspect-video"
+          v-show="isLoaded"
+          class=" object-cover w-full h-auto rounded-md aspect-video"
           :src="kegiatan.image"
           :alt="kegiatan.title"
           :placeholder="[50, 25, 75, 5]"
+          @load="isLoaded = true"
+        />
+        <USkeleton
+
+          v-show="!isLoaded"
+          class="w-full h-64 rounded"
+          :ui="{
+            rounded: 'rounded',
+            base: 'animate-pulse',
+            background: 'bg-primary-500 dark:bg-primmary-500',
+
+          } "
         />
         <template #footer>
           <p class="">

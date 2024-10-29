@@ -14,7 +14,7 @@ const { data: files } = await useLazyAsyncData('search', () =>
     .where({ _type: 'markdown' })
     .find()
     .then(files => files.filter((file) => {
-      return ['/berita/', '/artikel/', '/media'].some(prefix => (file._path ?? '').startsWith(prefix))
+      return ['/berita/', '/artikel/'].some(prefix => (file._path ?? '').startsWith(prefix))
     })), { default: () => [] })
 
 const defaultGroups = computed(() => files.value.map(file => ({

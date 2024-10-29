@@ -28,7 +28,7 @@ onMounted(() => {
 <template>
   <UContainer class="py-16">
     <div class="w-full text-center pb-8">
-      <h2  class="title">
+      <h2 class="title">
         FASILITAS
       </h2>
     </div>
@@ -45,7 +45,7 @@ onMounted(() => {
         >
           <USkeleton class="aspect-w-16 aspect-h-9" :ui="{ rounded: 'rounded-md' }" />
           <NuxtImg
-             :src="item" class="w-full h-48 md:h-64 object-cover rounded-md "
+            :src="item" class="w-full h-48 md:h-64 object-cover rounded-md "
             draggable="false"
             height="480"
             width="720"
@@ -57,7 +57,7 @@ onMounted(() => {
         </UCarousel>
       </div>
       <div class="w-full md:w-1/2 md:pl-4 md:pt-0 pt-2">
-        <ul  class="list-disc pl-4 ">
+        <ul class="list-disc pl-4 ">
           <li>
             Taman Baca
           </li>

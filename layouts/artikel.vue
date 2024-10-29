@@ -165,7 +165,7 @@ if (page.value) {
                           :hashtags="page.tags"
                           twitter-user="sdnteja2"
                         >
-                          <UButton size="xs" color="white" variant="ghost" trailing-icon="i-ph-twitter-logo-duotone" />
+                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-twitter-logo-duotone" />
                         </ShareNetwork>
                       </ClientOnly>
 
@@ -178,7 +178,7 @@ if (page.value) {
                           :hashtags="page.tags"
                           twitter-user="sdnteja2"
                         >
-                          <UButton size="xs" color="white" variant="ghost" trailing-icon="i-ph-linkedin-logo-duotone" />
+                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-linkedin-logo-duotone" />
                         </ShareNetwork>
                       </ClientOnly>
                       <ClientOnly>
@@ -190,7 +190,7 @@ if (page.value) {
                           :hashtags="page.tags"
                           twitter-user="sdnteja2"
                         >
-                          <UButton size="xs" color="white" variant="ghost" trailing-icon="i-ph-telegram-logo-duotone" />
+                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-telegram-logo-duotone" />
                         </ShareNetwork>
                       </ClientOnly>
                       <ClientOnly>
@@ -202,7 +202,7 @@ if (page.value) {
                           :hashtags="page.tags"
                           twitter-user="sdnteja2"
                         >
-                          <UButton size="xs" color="white" variant="ghost" trailing-icon="i-ph-facebook-logo-duotone" />
+                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-facebook-logo-duotone" />
                         </ShareNetwork>
                       </ClientOnly>
                       <ClientOnly>
@@ -214,7 +214,7 @@ if (page.value) {
                           :hashtags="page.tags"
                           twitter-user="sdnteja2"
                         >
-                          <UButton size="xs" color="white" variant="ghost" trailing-icon="i-ph-envelope-simple-duotone" />
+                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-envelope-simple-duotone" />
                         </ShareNetwork>
                       </ClientOnly>
                       <ClientOnly>
@@ -226,7 +226,7 @@ if (page.value) {
                           :hashtags="page.tags"
                           twitter-user="sdnteja2"
                         >
-                          <UButton size="xs" color="white" variant="ghost" trailing-icon="i-ph-whatsapp-logo-duotone" />
+                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-whatsapp-logo-duotone" />
                         </ShareNetwork>
                       </ClientOnly>
                     </div>
@@ -236,6 +236,7 @@ if (page.value) {
             </div>
           </div>
         </div>
+        <PagePrevNext />
       </div>
     </UContainer>
   </div>
