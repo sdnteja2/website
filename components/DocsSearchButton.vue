@@ -70,6 +70,9 @@ function onSelect(option: any) {
   if (!option)
     return // Pastikan hanya mengeksekusi jika option ada
 
+  // Tambahkan kondisi ini agar modal tertutup ketika item dipilih
+  isOpen.value = false
+
   if (option.click) {
     option.click()
   }
@@ -131,8 +134,8 @@ function onSelect(option: any) {
           },
           resultLimit: 8,
         }"
-        @update:model-value="onSelect"
         @close="isOpen = false"
+        @update:model-value="onSelect"
       />
     </UModal>
   </div>
