@@ -5,5 +5,5 @@ tags:
   - Kegiatan
 image: /img/galeri/kegiatan1.jpg
 layout: galeri
-icon: i-ph-image-duotone
+icon: i-hugeicons-image-01
 ---

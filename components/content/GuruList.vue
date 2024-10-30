@@ -37,8 +37,6 @@ const guru = computed(() => _guru.value || [])
           v-for="list in guru"
           :key="list.id"
           v-motion-fade-visible
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-bottom"
         >
           <div class="flex flex-col justify-center md:flex-row items-center gap-y-4 gap-x-4">
             <div class="md:h-36 h-52 w-52 md:w-36">
@@ -75,7 +73,7 @@ const guru = computed(() => _guru.value || [])
 
               <div class="w-full flex justify-center items-center">
                 <UButton
-                  icon="i-basil-instagram-outline"
+                  icon="i-hugeicons-instagram"
                   size="sm"
                   color="primary"
                   variant="ghost"
@@ -85,7 +83,7 @@ const guru = computed(() => _guru.value || [])
                   :title="`Follow ${list.title} on Instagram`"
                 />
                 <UButton
-                  icon="i-basil-facebook-solid"
+                  icon="i-hugeicons-facebook-01"
                   size="sm"
                   color="primary"
                   variant="ghost"
@@ -95,7 +93,7 @@ const guru = computed(() => _guru.value || [])
                   :title="`Follow ${list.title} on Facebook`"
                 />
                 <UButton
-                  icon="i-basil-gmail-outline"
+                  icon="i-hugeicons-mail-02"
                   size="sm"
                   color="primary"
                   variant="ghost"

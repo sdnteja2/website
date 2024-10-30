@@ -18,7 +18,7 @@ if (page.value) {
 </script>
 
 <template>
-  <div>
+  <div class="bgsvg">
     <!-- Komponen SpeedInsights untuk menampilkan wawasan kinerja halaman. -->
     <SpeedInsights />
 

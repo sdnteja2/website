@@ -125,8 +125,8 @@ const mediaTerkait = [
       </h2>
       <USelectMenu
         v-model="selected"
-        v-motion-fade-visible data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"
+        v-motion-fade-visible 
+        
         :ui="{ container: 'z-40 group' }"
         class="z-40 flex justify-center my-10 w-full md:w-1/3 mx-auto"
         :options="listkelas"

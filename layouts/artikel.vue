@@ -63,6 +63,19 @@ if (page.value) {
     ],
   })
 }
+
+const socialNetworks = ref([
+  { network: 'twitter', icon: 'i-hugeicons-new-twitter-ellipse' },
+  { network: 'linkedIn', icon: 'i-hugeicons-linkedin-01' },
+  { network: 'telegram', icon: 'i-hugeicons-telegram' },
+  { network: 'facebook', icon: 'i-hugeicons-facebook-01' },
+  { network: 'email', icon: 'i-hugeicons-mail-account-01' },
+  { network: 'whatsapp', icon: 'i-hugeicons-whatsapp' },
+])
+
+function generateShareUrl(network: string) {
+  return `https://sdnteja2.sch.id${page.value?._path}`
+}
 </script>
 
 <template>
@@ -150,88 +163,32 @@ if (page.value) {
               </UPopover><div class="block h-3 border-e border-gray-300 mx-1 dark:border-gray-600" />
 
               <div class="hs-tooltip inline-block">
-                <UPopover :popper="{ arrow: true }" overlay>
+                <UPopover :popper="{ arrow: true, placement: 'top-end' }" overlay>
                   <UTooltip text="Bagikan Artikel">
                     <UButton size="xs" color="white" trailing-icon="i-hugeicons-share-01" />
                   </UTooltip>
                   <template #panel>
                     <div class="p-3 flex flex-row space-x-2">
-                      <ClientOnly>
+                      <ClientOnly v-for="(network, index) in socialNetworks" :key="index">
                         <ShareNetwork
-                          network="twitter"
-                          :url="`https://sdnteja2.sch.id${page._path}`"
+                          :network="network.network"
+                          :url="generateShareUrl(network.network)"
                           :title="page.title"
                           :description="page.description"
                           :hashtags="page.tags"
                           twitter-user="sdnteja2"
                         >
-                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-twitter-logo-duotone" />
-                        </ShareNetwork>
-                      </ClientOnly>
-
-                      <ClientOnly>
-                        <ShareNetwork
-                          network="linkedIn"
-                          :url="`https://sdnteja2.sch.id${page._path}`"
-                          :title="page.title"
-                          :description="page.description"
-                          :hashtags="page.tags"
-                          twitter-user="sdnteja2"
-                        >
-                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-linkedin-logo-duotone" />
-                        </ShareNetwork>
-                      </ClientOnly>
-                      <ClientOnly>
-                        <ShareNetwork
-                          network="telegram"
-                          :url="`https://sdnteja2.sch.id${page._path}`"
-                          :title="page.title"
-                          :description="page.description"
-                          :hashtags="page.tags"
-                          twitter-user="sdnteja2"
-                        >
-                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-telegram-logo-duotone" />
-                        </ShareNetwork>
-                      </ClientOnly>
-                      <ClientOnly>
-                        <ShareNetwork
-                          network="facebook"
-                          :url="`https://sdnteja2.sch.id${page._path}`"
-                          :title="page.title"
-                          :description="page.description"
-                          :hashtags="page.tags"
-                          twitter-user="sdnteja2"
-                        >
-                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-facebook-logo-duotone" />
-                        </ShareNetwork>
-                      </ClientOnly>
-                      <ClientOnly>
-                        <ShareNetwork
-                          network="email"
-                          :url="`https://sdnteja2.sch.id${page._path}`"
-                          :title="page.title"
-                          :description="page.description"
-                          :hashtags="page.tags"
-                          twitter-user="sdnteja2"
-                        >
-                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-envelope-simple-duotone" />
-                        </ShareNetwork>
-                      </ClientOnly>
-                      <ClientOnly>
-                        <ShareNetwork
-                          network="whatsapp"
-                          :url="`https://sdnteja2.sch.id${page._path}`"
-                          :title="page.title"
-                          :description="page.description"
-                          :hashtags="page.tags"
-                          twitter-user="sdnteja2"
-                        >
-                          <UButton size="md" color="white" variant="ghost" trailing-icon="i-ph-whatsapp-logo-duotone" />
+                          <UButton
+                            size="md"
+                            color="white"
+                            variant="ghost"
+                            :trailing-icon="network.icon"
+                          />
                         </ShareNetwork>
                       </ClientOnly>
                     </div>
                   </template>
-                </UPopover>
+                </upopover>
               </div>
             </div>
           </div>

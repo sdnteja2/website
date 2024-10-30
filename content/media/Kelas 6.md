@@ -7,5 +7,5 @@ url: https://www.youtube.com/watch?v=H3_RsCctGlg
 sumber: BS1 Tv
 tags: [Video, Pembelajaran, Kelas 6]
 layout: pembelajaran
-icon: i-ph-video-duotone
+icon: i-hugeicons-play-list
 ---

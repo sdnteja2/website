@@ -4,7 +4,7 @@ date: '2024-10-29T00:00:00.000Z'
 description: Ingin tahu bagaimana membuat pembelajaran lebih bermakna dan berbasis pengalaman? Mari kenali Project Based Learning (PJBL), sebuah pendekatan yang memanfaatkan proyek nyata untuk mendorong keterlibatan dan pemahaman siswa secara mendalam.
 image: https://res.cloudinary.com/dyy24w5kl/image/upload/v1730201416/pjbl2_hm2hn5.webp
 layout: artikel
-icon: i-ph-note-duotone
+icon: i-hugeicons-notebook
 tags:
   - PJBL
   - Model Pembelajaran

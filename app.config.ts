@@ -1,4 +1,20 @@
+interface SocialIcon {
+  name: string
+  icon: string
+  href: string
+}
 export default defineAppConfig({
+  socialIcons: {
+    items: [
+      { name: 'facebook', icon: 'i-hugeicons-facebook', href: '#' },
+      { name: 'twitter', icon: 'i-hugeicons-twitter', href: '#' },
+      { name: 'instagram', icon: 'i-hugeicons-instagram', href: '#' },
+      { name: 'linkedin', icon: 'i-hugeicons-linkedin', href: '#' },
+      { name: 'whatsapp', icon: 'i-hugeicons-whatsapp', href: '#' },
+    ] as SocialIcon[], // Tipekan langsung sebagai SocialIcon[]
+
+  },
+
   ui: {
     primary: 'merah',
     gray: 'gelap',

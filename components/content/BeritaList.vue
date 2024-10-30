@@ -57,8 +57,8 @@ const beritaTerkait = [
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 items-center my-6 gap-6">
         <NuxtLink
           v-for="berita in beritaTerkait" :key="berita.title"
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-bottom"
+          
+          
           :to="berita.url"
           class="h-full"
           target="_blank"

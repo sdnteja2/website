@@ -8,5 +8,5 @@ sumber: KingTeach TUTOR
 tags:
   - Media Pemnbelajaran
 layout: pembelajaran
-icon: i-ph-video-duotone
+icon: i-hugeicons-play-list
 ---

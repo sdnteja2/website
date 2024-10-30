@@ -94,9 +94,8 @@ function onSelect(option: any) {
     >
       <div>
         <UButton
-
           aria-label="Buka pencarian"
-          icon="i-ph-magnifying-glass-duotone"
+          icon="i-hugeicons-search-01"
           color="kuning"
           variant="ghost"
           class="text-kuning-200 dark:text-white"

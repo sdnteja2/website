@@ -27,7 +27,7 @@ const ui = ref({
       >
         <div class="wfull pb-2 flex items-center justify-start">
           <UIcon
-            name="i-ph-arrow-circle-left-duotone"
+            name="i-hugeicons-square-arrow-left-double"
             class="w-8 h-8"
           />
         </div>
@@ -46,7 +46,7 @@ const ui = ref({
       >
         <div class="wfull pb-2 flex items-center justify-end">
           <UIcon
-            name="i-ph-arrow-circle-right-duotone"
+            name="i-hugeicons-square-arrow-right-double"
             class="w-8 h-8"
           />
         </div>

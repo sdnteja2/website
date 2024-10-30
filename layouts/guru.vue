@@ -116,7 +116,7 @@ defineOgImageComponent('OgImage', {
           <div class="w-full flex justify-end items-center">
             <!-- Tombol untuk mengikuti di Instagram -->
             <UButton
-              icon="i-basil-instagram-outline" size="sm"
+              icon="i-hugeicons-instagram" size="sm"
               color="primary"
               variant="ghost"
               square
@@ -126,7 +126,7 @@ defineOgImageComponent('OgImage', {
             />
             <!-- Tombol untuk mengikuti di Facebook -->
             <UButton
-              icon="i-basil-facebook-solid" size="sm"
+              icon="i-hugeicons-facebook-01" size="sm"
               color="primary"
               variant="ghost"
               square
@@ -136,7 +136,7 @@ defineOgImageComponent('OgImage', {
             />
             <!-- Tombol untuk mengirim email -->
             <UButton
-              icon="i-basil-gmail-outline" size="sm" color="primary" variant="ghost" square
+              icon="i-hugeicons-mail-02" size="sm" color="primary" variant="ghost" square
               :to="`mailto:${page.email}`"
               target="_blank"
               :title="`Send an email to ${page.title}`"

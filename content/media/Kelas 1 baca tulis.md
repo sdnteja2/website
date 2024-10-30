@@ -8,5 +8,5 @@ sumber: indahwati_ indah
 tags:
   - Media pembelajaran
 layout: pembelajaran
-icon: i-ph-video-duotone
+icon: i-hugeicons-play-list
 ---

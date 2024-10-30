@@ -4,7 +4,7 @@ date: '2024-10-28'
 description: Ingin tahu bagaimana cara membuat pembelajaran lebih menarik dan bermakna? Pelajari Problem Based Learning (PBL) secara mendalam. Artikel ini membahas konsep, sejarah, tujuan, hingga langkah-langkah penerapan PBL di kelas.
 image: https://res.cloudinary.com/dyy24w5kl/image/upload/v1730128809/artikel/DALL_E_2024-10-28_22.19.33_-_Create_an_illustration_of_an_Indonesian_elementary_school_classroom_designed_for_Problem-Based_Learning_PBL_._In_this_scene_young_Indonesian_student_ajxhde.webp
 layout: artikel
-icon: i-ph-note-duotone
+icon: i-hugeicons-notebook
 tags:
   - PBL
   - Model Pembelajaran

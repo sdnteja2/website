@@ -34,12 +34,12 @@ const id = computed(() => {
 
 <template>
   <article
-    v-if="berita._path && berita.title" data-aos="fade-up"
-    data-aos-anchor-placement="top-bottom"
+    v-if="berita._path && berita.title"
+
     :data-content-id="id"
     class="h-full"
   >
-    <li v-motion-fade-visible>
+    <UCard v-motion-fade-visible>
       <p class="mb-1 text-sm justify-end flex text-gray-500 dark:text-neutral-500">
         <UBadge size="xs" class="">
           <time>
@@ -76,7 +76,7 @@ const id = computed(() => {
           Lanjut Baca...
         </NuxtLink>
       </p>
-    </li>
+    </UCard>
     <UDivider />
   </article>
 </template>

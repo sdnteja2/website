@@ -69,8 +69,8 @@ const rows = computed(() => {
       <!-- Tabel dengan Paginasi -->
       <UTable
         v-motion-fade-visible
-        data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"
+        
+        
         class="max-w-3xl mx-auto"
         :columns="columns"
         :rows="rows"
