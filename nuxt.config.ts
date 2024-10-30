@@ -100,6 +100,7 @@ export default defineNuxtConfig({
       owner: 'sdnteja2',
       url: 'https://github.com/sdnteja2/website',
     },
+    enabled: true,
   },
   nitro: {
     prerender: {
@@ -126,22 +127,9 @@ export default defineNuxtConfig({
     '/media': { ssr: false },
     '/kegiatan': { isr: true, prerender: true },
 
-    // '/articles/**': { isr: true, prerender: true },
-    // '/gallery/**': { isr: true, prerender: true },
-    // '/projects/**': { isr: true, prerender: true },
-    // '/en/articles/**': { isr: true, prerender: true },
-    // '/en/gallery/**': { isr: true, prerender: true },
-    // '/en/projects/**': { isr: true, prerender: true },
-    // '/artikel/**': { isr: true, prerender: true },
-    // '/galeri/**': { isr: true, prerender: true },
-    // '/projek/**': { isr: true, prerender: true },
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },
-
-  // app: {
-  //   layoutTransition: { name: 'layout', mode: 'out-in' },
-  // },
 
 })

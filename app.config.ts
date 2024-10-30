@@ -6,10 +6,10 @@ interface SocialIcon {
 export default defineAppConfig({
   socialIcons: {
     items: [
-      { name: 'facebook', icon: 'i-hugeicons-facebook', href: '#' },
+      { name: 'facebook', icon: 'i-hugeicons-facebook-01', href: '#' },
       { name: 'twitter', icon: 'i-hugeicons-twitter', href: '#' },
       { name: 'instagram', icon: 'i-hugeicons-instagram', href: '#' },
-      { name: 'linkedin', icon: 'i-hugeicons-linkedin', href: '#' },
+      { name: 'linkedin', icon: 'i-hugeicons-linkedin-01', href: '#' },
       { name: 'whatsapp', icon: 'i-hugeicons-whatsapp', href: '#' },
     ] as SocialIcon[], // Tipekan langsung sebagai SocialIcon[]
 

@@ -1,64 +1,41 @@
-// nuxt.schema.ts
 import { field, group } from '@nuxthq/studio/theme'
 
 export default defineNuxtSchema({
   appConfig: {
     socialIcons: group({
-      title: 'Social Icons',
+      title: 'Social Media',
       description: 'Customize social media icons and links',
-      icon: 'i-hugeicons-social', // Sesuaikan dengan ikon yang diinginkan
+      icon: 'i-hugeicons-folder-shared-02', // Sesuaikan dengan ikon yang diinginkan
       fields: {
         items: field({
           type: 'array',
           title: 'Icons',
           description: 'Add or edit social media icons and links',
           default: [
-            { name: 'facebook', icon: 'i-hugeicons-facebook', href: '#' },
+            { name: 'facebook', icon: 'i-hugeicons-facebook-01', href: '#' },
             { name: 'twitter', icon: 'i-hugeicons-twitter', href: '#' },
             { name: 'instagram', icon: 'i-hugeicons-instagram', href: '#' },
-            { name: 'linkedin', icon: 'i-hugeicons-linkedin', href: '#' },
+            { name: 'linkedin', icon: 'i-hugeicons-linkedin-01', href: '#' },
             { name: 'whatsapp', icon: 'i-hugeicons-whatsapp', href: '#' },
           ],
-        }),
-      },
-    }),
-    footerColumns: group({
-      title: 'Footer Columns',
-      description: 'Customize footer columns and links',
-      icon: 'i-hugeicons-columns', // Sesuaikan dengan ikon yang diinginkan
-      fields: {
-        items: field({
-          type: 'array',
-          title: 'Columns',
-          description: 'Edit footer columns and their links',
-          default: [
-            {
-              title: 'KEMDIKBUD',
-              links: [
-                { text: 'Pricing', href: '#' },
-                { text: 'Changelog', href: '#' },
-                { text: 'Docs', href: '#' },
-              ],
-            },
-            {
-              title: 'DISDIK JABAR',
-              links: [
-                { text: 'About us', href: '#' },
-                { text: 'Blog', href: '#' },
-                { text: 'Careers', href: '#', badge: 'We\'re hiring' },
-                { text: 'Customers', href: '#' },
-              ],
-            },
-            {
-              title: 'DISDIK MAJALENGKA',
-              links: [
-                { text: 'Tes', href: '#' },
-                { text: 'Blog', href: '#' },
-                { text: 'Careers', href: '#', badge: 'We\'re hiring' },
-                { text: 'Customers', href: '#' },
-              ],
-            },
-          ],
+          // Menambahkan konfigurasi subfield untuk array objek
+          schema: {
+            name: field({
+              type: 'string',
+              title: 'Social Media Name',
+              description: 'Name of the social media platform',
+            }),
+            icon: field({
+              type: 'icon', // Menampilkan icon picker
+              title: 'Icon',
+              description: 'Select an icon for the platform',
+            }),
+            href: field({
+              type: 'string',
+              title: 'Link',
+              description: 'URL to the social media profile',
+            }),
+          },
         }),
       },
     }),
