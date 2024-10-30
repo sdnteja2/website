@@ -11,6 +11,9 @@ export default defineNuxtSchema({
           type: 'array',
           title: 'Icons',
           description: 'Add or edit social media icons and links',
+          default: [
+            { name: '', icon: '', href: '#' },
+          ],
           schema: {
             type: 'object',
             fields: {
@@ -18,16 +21,19 @@ export default defineNuxtSchema({
                 type: 'string',
                 title: 'Social Media Name',
                 description: 'Name of the social media platform',
+                default: '',
               }),
               icon: field({
                 type: 'icon',
                 title: 'Icon',
                 description: 'Select an icon for the platform',
+                default: '',
               }),
               href: field({
                 type: 'string',
                 title: 'Link',
                 description: 'URL to the social media profile',
+                default: '#',
               }),
             },
           },

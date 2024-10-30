@@ -3,6 +3,7 @@ interface SocialIcon {
   icon: string
   href: string
 }
+
 export default defineAppConfig({
   socialIcons: {
     items: [
@@ -12,9 +13,7 @@ export default defineAppConfig({
       { name: 'linkedin', icon: 'i-hugeicons-linkedin-01', href: '#' },
       { name: 'whatsapp', icon: 'i-hugeicons-whatsapp', href: '#' },
     ] as SocialIcon[], // Tipekan langsung sebagai SocialIcon[]
-
   },
-
   ui: {
     primary: 'merah',
     gray: 'gelap',
@@ -23,14 +22,12 @@ export default defineAppConfig({
         color: 'primary',
       },
     },
-    container:
-    {
+    container: {
       base: 'mx-auto',
       padding: 'px-2 sm:px-4 lg:px-6',
       constrained: 'max-w-7xl',
     },
-    tabs:
-    {
+    tabs: {
       wrapper: 'relative space-y-2',
       container: 'relative w-full ',
       base: 'focus:outline-none ',
@@ -45,15 +42,15 @@ export default defineAppConfig({
         marker: {
           wrapper: 'absolute top-[4px] left-[4px] duration-200 ease-out focus:outline-none',
           base: 'w-full h-full',
-          background: 'bg-kuning-400 dark:bg-kuning', // Marker tetap putih di mode terang dan gelap gelap
+          background: 'bg-kuning-400 dark:bg-kuning',
           rounded: 'rounded-md',
           shadow: 'shadow-sm',
         },
         tab: {
           base: 'relative inline-flex items-center justify-center flex-shrink-0 w-full ui-focus-visible:outline-0 ui-focus-visible:ring-2 ui-focus-visible:ring-merah-500 dark:ui-focus-visible:ring-merah-400 ui-not-focus-visible:outline-none focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors duration-200 ease-out',
           background: '',
-          active: 'text-merah-950 dark:text-merah-950', // Warna teks aktif merah untuk mode terang, putih untuk mode gelap
-          inactive: 'text-white dark:text-white', // Warna teks inaktif gray
+          active: 'text-merah-950 dark:text-merah-950',
+          inactive: 'text-white dark:text-white',
           height: 'h-8',
           padding: 'px-3',
           size: 'text-base',
@@ -64,7 +61,5 @@ export default defineAppConfig({
         },
       },
     },
-
   },
-
 })
