@@ -14,6 +14,8 @@ export default defineNuxtConfig({
     '@nuxthq/studio',
     '@nuxt/scripts',
     '@vueuse/motion/nuxt',
+    'nuxt-delay-hydration',
+    '@nuxtjs/web-vitals',
   ],
   ui: {
     global: true,
@@ -50,6 +52,9 @@ export default defineNuxtConfig({
       googleAnalytics: true,
       googleTagManager: true,
     },
+  },
+  delayHydration: {
+    mode: 'mount',
   },
   runtimeConfig: {
     public: {
