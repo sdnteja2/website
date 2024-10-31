@@ -14,6 +14,7 @@ export default defineAppConfig({
       { name: 'whatsapp', icon: 'i-hugeicons-whatsapp', href: '#' },
     ] as SocialIcon[], // Tipekan langsung sebagai SocialIcon[]
   },
+
   ui: {
     primary: 'merah',
     gray: 'gelap',
@@ -62,4 +63,12 @@ export default defineAppConfig({
       },
     },
   },
+
+  icon: {
+    size: 'sm'
+  },
+
+  footerColumns: {
+    items: ''
+  }
 })
