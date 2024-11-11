@@ -40,6 +40,9 @@ export default defineNuxtConfig({
       preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini', 'c', 'cpp'],
     },
   },
+  icon: {
+    fetchTimeout: 2000, // 15 seconds
+  },
   site: {
     url: 'https://sdnteja2.sch.id/',
     name: 'SDN TEJA 2',
