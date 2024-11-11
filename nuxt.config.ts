@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     'nuxt-delay-hydration',
     '@nuxtjs/web-vitals',
-    'nuxt-security',
+
   ],
   ui: {
     global: true,
@@ -47,13 +47,7 @@ export default defineNuxtConfig({
     defaultLocale: 'id', // not needed if you have @nuxtjs/i18n installed
     themeColor: '#F22727',
   },
-  security: {
-    headers: {
-      crossOriginResourcePolicy: 'cross-origin',
-      contentSecurityPolicy: false,
-      xFrameOptions: false,
-    },
-  },
+
   scripts: {
     registry: {
       // loads the script
