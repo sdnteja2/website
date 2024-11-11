@@ -47,6 +47,13 @@ export default defineNuxtConfig({
     defaultLocale: 'id', // not needed if you have @nuxtjs/i18n installed
     themeColor: '#F22727',
   },
+  security: {
+    headers: {
+      crossOriginResourcePolicy: 'cross-origin',
+      contentSecurityPolicy: false,
+      xFrameOptions: false,
+    },
+  },
   scripts: {
     registry: {
       // loads the script
