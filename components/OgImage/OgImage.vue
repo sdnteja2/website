@@ -24,9 +24,6 @@ const description = computed(() => {
 
 <template>
   <div class="w-full h-full flex flex-col justify-center bg-merah-950">
-    <p class="uppercase text-[24px] absolute bottom-[90px] right-[90px] text-kuning mb-4 font-semibold">
-        SDN TEJA II
-      </p>
     <svg
       class="absolute right-0 top-0"
       width="629"
@@ -53,7 +50,9 @@ const description = computed(() => {
     </svg>
 
     <div class="w-[600px] pl-[100px]">
-      
+      <p class="uppercase text-[24px]  text-kuning mb-4 font-semibold">
+        SDN TEJA II
+      </p>
       <h1 v-if="title" class="w-[600px] m-0 text-[40px] font-semibold mb-4 text-merah-300 flex items-center">
         <span>{{ title }}</span>
       </h1>

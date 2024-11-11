@@ -58,7 +58,7 @@ defineOgImageComponent('OgImage', {
             </div>
 
             <!-- Baris untuk menampilkan NIP -->
-            <div class="flex flex-row justify-start w-full space-x-2">
+            <!-- <div class="flex flex-row justify-start w-full space-x-2">
               <div class="w-1/3">
                 NIP
               </div>
@@ -68,7 +68,7 @@ defineOgImageComponent('OgImage', {
               <div class="w-2/3">
                 {{ page.nip }}
               </div>
-            </div>
+            </div> -->
 
             <!-- Baris untuk menampilkan Tempat Tanggal Lahir -->
             <div class="flex flex-row justify-start w-full space-x-2">

@@ -35,8 +35,8 @@ const id = computed(() => {
 
 <template>
   <article
-    v-if="media._path && media.title" 
-    
+    v-if="media._path && media.title"
+
     :data-content-id="id"
     class="h-full x"
   >
@@ -55,20 +55,15 @@ const id = computed(() => {
       }"
       class="h-full z-20"
     >
-      <!-- <div>
+      <div>
         <div class="flex items-center justify-center p-5">
           <ScriptYouTubePlayer :video-id="media.video">
             <template #placeholder="{ placeholder }">
-              <img :src="placeholder" alt="Video Placeholder">
+              <img :src="placeholder" :alt="media.tile" loading="eager">
             </template>
           </ScriptYouTubePlayer>
         </div>
-      </div> -->
-      <lite-youtube
-        :videoid="media.video"
-        :playlabel="media.title"
-        params="controls=2&start=10&end=30&modestbranding=2&rel=0&enablejsapi=1"
-      />
+      </div>
       <h3 class="font-body font-medium mt-2 ">
         {{ media.title }}
       </h3>

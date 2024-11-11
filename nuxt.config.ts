@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     'nuxt-delay-hydration',
     '@nuxtjs/web-vitals',
+    'nuxt-security',
   ],
   ui: {
     global: true,
@@ -88,24 +89,14 @@ export default defineNuxtConfig({
       },
     ],
   },
-  css: [
-    '~/node_modules/lite-youtube-embed/src/lite-yt-embed.css',
-  ],
-  build: {
-    transpile: ['lite-youtube'],
-  },
-  vue: {
-    compilerOptions: {
-      isCustomElement: tag => ['lite-youtube'].includes(tag),
-    },
-  },
+
   studio: {
     gitInfo: {
       name: 'website',
       owner: 'sdnteja2',
       url: 'https://github.com/sdnteja2/website',
     },
-    enabled: true,
+    // enabled: true,
   },
   nitro: {
     prerender: {
