@@ -53,18 +53,6 @@ const guru = computed(() => _guru.value || [])
             </div>
 
             <div class="grow">
-              <UButton
-                variant="outline"
-                :to="list._path"
-                :title="list.title"
-                rel="author"
-                block
-              >
-                <h2 class="text-left font-bold tracking-wide">
-                  {{ list.title }}
-                </h2>
-              </UButton>
-
               <div class="py-2">
                 <p class="text-xs text-center">
                   {{ list.jabatan }}
@@ -105,7 +93,19 @@ const guru = computed(() => _guru.value || [])
               </div>
             </div>
           </div>
-
+          <div class="md:pt-4">
+            <UButton
+              variant="outline"
+              :to="list._path"
+              :title="list.title"
+              rel="author"
+              block
+            >
+              <h2 class="text-left font-bold tracking-wide">
+                {{ list.title }}
+              </h2>
+            </UButton>
+          </div>
           <div class="md:pt-4">
             <p class="italic py-2 text-sm">
               "{{ list.description }}"

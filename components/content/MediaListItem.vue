@@ -59,7 +59,7 @@ const id = computed(() => {
         <div class="flex items-center justify-center p-5">
           <ScriptYouTubePlayer :video-id="media.video">
             <template #placeholder="{ placeholder }">
-              <img :src="placeholder" :alt="media.tile" loading="eager">
+              <img :src="placeholder">
             </template>
           </ScriptYouTubePlayer>
         </div>
