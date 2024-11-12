@@ -1,13 +1,14 @@
 <!-- eslint-disable vue/no-unused-vars -->
 <script setup lang="ts">
-import { withTrailingSlash } from 'ufo'
-
 const props = defineProps({
   path: {
     type: String,
     default: 'media',
   },
 })
+
+const { withTrailingSlash } = await import('ufo')
+
 const selected = ref('Semua Kelas') // Default ke "Semua Kelas"
 
 // Mendapatkan data media
@@ -125,8 +126,8 @@ const mediaTerkait = [
       </h2>
       <USelectMenu
         v-model="selected"
-        v-motion-fade-visible 
-        
+        v-motion-fade-visible
+
         :ui="{ container: 'z-40 group' }"
         class="z-40 flex justify-center my-10 w-full md:w-1/3 mx-auto"
         :options="listkelas"

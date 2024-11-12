@@ -4,6 +4,7 @@
 .nuxt
 .nitro
 .cache
+.unlighthouse
 dist
 
 # Node dependencies

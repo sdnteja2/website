@@ -42,9 +42,9 @@ const remainingText = props.title.substring(3) // Sisa teks
             <CldImage
               v-motion-fade-visible
               :src="props.image"
-              width="1600"
-              height="900"
-              alt="My Awesome Image"
+              width="800"
+              height="450"
+              alt="SDN Teja 2"
               class="aspect-[16/9] w-full rounded-md shadow-md h-auto object-cover"
             />
           </div>
