@@ -1,14 +1,14 @@
 ---
-title: 8 Keterampilan Mengajar Esensial yang Wajib Dimiliki Guru untuk Pembelajaran Efektif
-date: '2024-11-11'
-description: Temukan delapan keterampilan mengajar esensial yang wajib dimiliki oleh setiap guru untuk menciptakan pembelajaran yang efektif dan interaktif di kelas. Tingkatkan kemampuan mengajar Anda dan hasil belajar siswa dengan keterampilan ini.
-image: https://res.cloudinary.com/dyy24w5kl/image/upload/v1731333897/artikel/1_rdwyka.jpg
+title: 'Sejarah Pendidikan di Indonesia: Perkembangan dan Transformasi dari Masa ke Masa'
+date: '2024-11-19T00:00:00.000Z'
+description: Sejarah pendidikan di Indonesia mencakup perkembangan dari sistem tradisional hingga era modern. Artikel ini mengulas perjalanan pendidikan Indonesia dari masa kerajaan, penjajahan Belanda, pendudukan Jepang, hingga pasca kemerdekaan, serta tantangan dan harapan di masa depan.
+image: https://res.cloudinary.com/dyy24w5kl/image/upload/v1732023187/artikel/artikel_sejarah_pendidikanfreepik__adorable-cartoon-style-indonesian-education-after-__62014_fye57v.jpg
 layout: artikel
 icon: i-hugeicons-notebook
 tags:
-  - guru
-  - Keterampilan
-  - Pembelajaran
+  - sejarah
+  - pendidikan
+  - indonesia
 ---
 
 Sejarah pendidikan di Indonesia mencakup perkembangan dari sistem tradisional hingga era modern. Artikel ini mengulas perjalanan pendidikan Indonesia dari masa kerajaan, penjajahan Belanda, pendudukan Jepang, hingga pasca kemerdekaan, serta tantangan dan harapan di masa depan.
